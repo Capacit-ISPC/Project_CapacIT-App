@@ -15,11 +15,11 @@ En nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) pued
 
   - [Diseño en Figma App ToDoOk ]()
    
- - [Testing]()
+ - [Testing](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Testing)
 
  - [Meeting realizadas]()
  
- - [Miembros de equipo]()
+ - [Miembros de equipo](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Miembros-de-Equipo)
  
  
  - [Archivo Zip primera version]()
