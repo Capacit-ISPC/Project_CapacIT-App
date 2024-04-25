@@ -13,7 +13,7 @@ En nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) pued
 
  - [Descripción del Proyecto]()
 
-  - [Diseño en Figma App ToDoOk ]()
+ - [Diseño de interfaz en Figma](https://www.figma.com/file/yzoff40O4O2ZKgYflUPnZe/CapacIT-Dise%C3%B1o?type=design&node-id=0%3A1&mode=design&t=XGM46rWBitHLxxKO-1)
    
  - [Testing](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Testing)
 
