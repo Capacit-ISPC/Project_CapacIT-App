@@ -1,7 +1,6 @@
 # 📱 CapacIT Android App 
 Practica Profesionalizante - Proyecto Final  - ISPC 2024
 
-
 Nuestro proyecto consiste en desarrollar una aplicación móvil que tiene como objetivo  
 Algunas de sus principales características incluyen 
 
