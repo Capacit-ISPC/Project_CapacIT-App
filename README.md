@@ -6,7 +6,7 @@ Nuestro proyecto consiste en desarrollar una aplicación móvil que tiene como o
 ## 🛠️ Construido con:
 JAVA  -  Android Studio
 
-## Wiki 📖
+## 📖 Wiki 
 En nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) puede consultar:
 
  - [Descripción del Proyecto]()
