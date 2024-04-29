@@ -28,7 +28,7 @@ Una de sus principales ventajas que incluye este complemento es brindarle el ben
 
 Link a nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) puede consultar:
 
-- [Diseño en Figma App ToDoOk ](https://www.figma.com/file/yzoff40O4O2ZKgYflUPnZe/CapacIT-Dise%C3%B1o?type=design&node-id=0-1&mode=design&t=g4FAlhO14i6vCfrD-0)
+- [Diseño en Figma App](https://www.figma.com/file/yzoff40O4O2ZKgYflUPnZe/CapacIT-Dise%C3%B1o?type=design&node-id=0-1&mode=design&t=g4FAlhO14i6vCfrD-0)
 - [Testing](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Testing)
 
 - [Meeting realizadas](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Reuniones-Equipo)
