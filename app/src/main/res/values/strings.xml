@@ -1,3 +1,20 @@
 <resources>
+    <!-- CREDENCIALES APLICATIVO-->
     <string name="app_name">CapacitApp</string>
+    <string name="developers">Equipo Capacit</string>
+    <string name="verion">Version 7.0</string>
+
+    <!-- LOGIN-->
+    <string name="login_title">Iniciar Sesión con cuenta CapacitApp</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Contraseña</string>
+    <string name="login_button">Iniciar sesion</string>
+    <string name="forgol_pasword">¿Olvidaste tu contraseña? Click Aqui</string>
+    <string name="new_account">¿No tenes cuenta? Registrate</string>
+
+   
+
+
+
+
 </resources>
