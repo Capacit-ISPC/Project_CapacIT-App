@@ -22,7 +22,7 @@ Una de sus principales ventajas que incluye este complemento es brindarle el ben
 
 ## Documento IEEE830
 
-- Link a documento : https://docs.google.com/document/d/1HZkzoW6lNxH8oToclJkL5-Q5bUas1GDv/edit?usp=sharing&ouid=116070453315337662375&rtpof=true&sd=true
+- Link a documento : https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/IEEE830
   
 ---
 
