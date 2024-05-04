@@ -22,7 +22,7 @@ Una de sus principales ventajas que incluye este complemento es brindarle el ben
 
 ## Documento IEEE830
 
-- Link a documento : [IEE830 CapacITApp 2024][(https://docs.google.com/document/d/1e0zM1yF02QUeH7akZ6qVxyfHWLgBOY3wE-Z4JhKcTiQ/edit]
+- Link a documento : https://docs.google.com/document/d/1HZkzoW6lNxH8oToclJkL5-Q5bUas1GDv/edit?usp=sharing&ouid=116070453315337662375&rtpof=true&sd=true
   
 ---
 
