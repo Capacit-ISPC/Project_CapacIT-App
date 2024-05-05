@@ -1,3 +1,18 @@
 <resources>
+
+    <!--CREDENCIALES APLICACIÓN -->
+
     <string name="app_name">CapacitApp</string>
+    <string name="desarrollo">Desarrollado por: CapacIT</string>
+    <string name="version">Version </string>
+
+    <!--LOGIN -->
+
+
+    <!--CURSOS -->
+
+
+    <!--PERFIL -->
+
+
 </resources>
