@@ -17,7 +17,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewAyuda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/customToolbar" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewContactarnos"
         android:layout_width="209dp"
         android:layout_height="140dp"
         android:layout_marginTop="150dp"
@@ -39,10 +39,10 @@
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAyuda" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewemailContacto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -52,10 +52,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewContactarnos" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewLogoContacto"
         android:layout_width="160dp"
         android:layout_height="140dp"
         android:layout_marginBottom="80dp"
