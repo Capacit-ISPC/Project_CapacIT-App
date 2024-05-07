@@ -12,5 +12,11 @@
     <string name="forgol_pasword">¿Olvidaste tu contraseña? Click Aqui</string>
     <string name="new_account">¿No tenes cuenta? Registrate</string>
 
+    <!-- CONTACTO-->
+    <string name="text_ayuda">¿Cómo podemos ayudarte?</string>
+    <string name="text_contactarnos">Podés contactarnos escribiéndonos al siguiente e-mail:</string>
+    <string name="text_emailcontacto">CapacIT@email.com</string>
+
+
 
 </resources>
