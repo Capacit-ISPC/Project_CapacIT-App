@@ -61,6 +61,12 @@
                 android:text="Descripción del curso"
                 android:textSize="20sp" />
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="51sp"
+                android:text="Comprar" />
+
 
         </LinearLayout>
 
