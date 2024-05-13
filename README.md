@@ -1,5 +1,7 @@
 # 📱 CapacIT Android App
 
+![portada](https://github.com/Capacit-ISPC/Project_CapacIT-App/blob/develop/documentacion/portada_capacit_app.png)
+
 Practica Profesionalizante - Proyecto Final - ISPC 2024
 
 Nuestro proyecto consiste en desarrollar una aplicación móvil que tiene como objetivo ser un coplemento del proyecto CapacIT-Web.
