@@ -1,4 +1,4 @@
-package com.capacitapp;
+package com.capacitapp.models;
 
 public class Curso {
     int id;

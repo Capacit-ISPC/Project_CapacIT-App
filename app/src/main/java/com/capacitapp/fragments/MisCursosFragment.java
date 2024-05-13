@@ -1,4 +1,4 @@
-package com.capacitapp;
+package com.capacitapp.fragments;
 
 
 import android.os.Bundle;
@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.capacitapp.Curso;
-import com.capacitapp.MisCursosAdapter;
+
+import com.capacitapp.models.Curso;
 import com.capacitapp.R;
+import com.capacitapp.adapters.MisCursosAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
