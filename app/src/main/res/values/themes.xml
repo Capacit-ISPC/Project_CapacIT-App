@@ -4,12 +4,12 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorOnSecondary">@color/black</item>
-        
-    </style>
+        <!-- <item name="colorPrimary">@color/colorPrimary</item>
+         <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+         <item name="colorOnPrimary">@color/white</item>
+         <item name="colorOnSecondary">@color/black</item>-->
 
-    <style name="Theme.CapacitApp" parent="Base.Theme.CapacitApp" />
-</resources>
+     </style>
+
+     <style name="Theme.CapacitApp" parent="Base.Theme.CapacitApp" />
+ </resources>
