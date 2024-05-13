@@ -1,4 +1,4 @@
-package com.capacitapp;
+package com.capacitapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.capacitapp.Curso;
+import com.capacitapp.models.Curso;
 import com.capacitapp.OnItemClickListener;
 import com.capacitapp.R;
 

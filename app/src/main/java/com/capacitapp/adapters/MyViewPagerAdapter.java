@@ -1,4 +1,4 @@
-package com.capacitapp;
+package com.capacitapp.adapters;
 
 
 import androidx.annotation.NonNull;
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.capacitapp.CursosFragment;
-import com.capacitapp.MisCursosFragment;
+import com.capacitapp.fragments.CursosFragment;
+import com.capacitapp.fragments.MisCursosFragment;
 
 public class MyViewPagerAdapter extends FragmentStateAdapter {
     public MyViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {

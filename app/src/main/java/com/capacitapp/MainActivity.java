@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
-import com.capacitapp.MyViewPagerAdapter;
+import com.capacitapp.adapters.MyViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
