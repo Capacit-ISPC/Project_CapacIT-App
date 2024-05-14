@@ -67,7 +67,7 @@
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button_editar_config"
+                android:id="@+id/button_registrarse"
                 android:layout_width="match_parent"
                 android:layout_height="51sp"
                 android:text="Comprar" />

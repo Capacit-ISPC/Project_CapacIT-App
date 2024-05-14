@@ -89,10 +89,10 @@
         tools:layout_editor_absoluteX="16dp" />
 
     <Button
-        android:id="@+id/button_editar_config"
+        android:id="@+id/button_registrarse"
         android:layout_width="163dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/btn_editar_config"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
