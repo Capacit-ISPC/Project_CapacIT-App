@@ -59,10 +59,12 @@
         android:layout_width="160dp"
         android:layout_height="140dp"
         android:layout_marginBottom="108dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_capacit" />
+        app:srcCompat="@drawable/ic_capacit"
+        tools:ignore="ExtraText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
