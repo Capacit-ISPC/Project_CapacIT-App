@@ -67,7 +67,7 @@ public class CursosAdapter extends RecyclerView.Adapter<CursosAdapter.CursoViewH
             super(itemView);
             imgCurso = itemView.findViewById(R.id.imgFoto);
             textViewTituloCurso = itemView.findViewById(R.id.tvNombreCV);
-            textViewDescripcion = itemView.findViewById(R.id.textView);
+            textViewDescripcion = itemView.findViewById(R.id.textView_nombreconfig);
             textViewPrecio = itemView.findViewById(R.id.tvPrecioCurso);
             itemView.setOnClickListener(this);
         }

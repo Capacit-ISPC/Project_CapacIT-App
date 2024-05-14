@@ -16,21 +16,35 @@
     <string name="text_ayuda">¿Cómo podemos ayudarte?</string>
     <string name="text_contactarnos">Podés contactarnos escribiéndonos al siguiente e-mail:</string>
     <string name="text_emailcontacto">CapacIT@email.com</string>
-    <string name="iniciar_secion">Iniciar Seción</string>
+
+    <!-- INICIO-->
+    <string name="iniciar_secion">Iniciar Sesión</string>
     <string name="registrarse">Registrarse</string>
-    <string name="contactanos">Contactanos</string>
+    <string name="contactanos">Contactarnos</string>
     <string name="ya_tienes_cuenta">¿Ya Tienes Cuenta?</string>
     <string name="quieres_crear_tu_cuenta">¿Quieres Crear tu Cuenta?</string>
     <string name="necesitas_ayuda">¿Necesitas Ayuda?</string>
+
+    <!-- LOGIN-->
     <string name="correo">Correo</string>
     <string name="contrase_a">Contraseña</string>
     <string name="no_tienes_cuenta">¿No Tienes Cuenta?</string>
+
+    <!-- REGISTRO-->
     <string name="usuario_apodo">Usuario/Apodo</string>
     <string name="nombre_s">Nombre/s</string>
     <string name="apellido_s">Apellido/s</string>
     <string name="pais">Pais</string>
     <string name="button">Button</string>
     <string name="provincia">Provincia</string>
+
+    <!-- CONFIGURACIÓN-->
+    <string name="text_nombre_config">Nombre</string>
+    <string name="text_apellido_config">Apellido</string>
+    <string name="text_email_config">E-mail</string>
+    <string name="text_contraseña_config">Contraseña</string>
+    <string name="btn_editar_config">Editar</string>
+
 
 
 </resources>

@@ -17,22 +17,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_nombreconfig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="TextView"
+        android:text="@string/text_nombre_config"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_foto_config" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView_Apellidoconfig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/text_apellido_config"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView_nombreconfig">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/textView_Apellidoconfig">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -71,35 +71,35 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView_emailconfig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
-        android:text="TextView"
+        android:text="@string/text_email_config"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout7"
         tools:layout_editor_absoluteX="16dp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView_comtraseñaconfig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="TextView"
+        android:text="@string/text_contraseña_config"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout8"
         tools:layout_editor_absoluteX="16dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_editar_config"
         android:layout_width="163dp"
         android:layout_height="44dp"
         android:layout_marginBottom="136dp"
-        android:text="Button"
+        android:text="@string/btn_editar_config"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView_foto_config"
         android:layout_width="114dp"
         android:layout_height="105dp"
         android:layout_marginTop="24dp"
@@ -117,7 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
+        app:layout_constraintTop_toBottomOf="@+id/textView_emailconfig">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -132,7 +132,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/textView_comtraseñaconfig">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
