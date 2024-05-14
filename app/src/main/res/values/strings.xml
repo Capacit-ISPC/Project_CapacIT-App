@@ -25,6 +25,12 @@
     <string name="correo">Correo</string>
     <string name="contrase_a">Contraseña</string>
     <string name="no_tienes_cuenta">¿No Tienes Cuenta?</string>
+    <string name="usuario_apodo">Usuario/Apodo</string>
+    <string name="nombre_s">Nombre/s</string>
+    <string name="apellido_s">Apellido/s</string>
+    <string name="pais">Pais</string>
+    <string name="button">Button</string>
+    <string name="provincia">Provincia</string>
 
 
 </resources>
