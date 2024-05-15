@@ -49,7 +49,6 @@ Link a nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) 
 ## Personal involucrado en el desarrollo del proyecto:
 
 
-
 |        Nombre y apellido         |                      e-mail                       |
 | :------------------------------: | :-----------------------------------------------: |
 |       Jorge Nicolás Ramos        |            jnicolas.ramos10@gmail.com             |
