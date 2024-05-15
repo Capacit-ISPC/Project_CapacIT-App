@@ -2,7 +2,12 @@ package com.capacitapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
 import com.google.android.material.tabs.TabLayout;
 import com.capacitapp.adapters.MyViewPagerAdapter;
 
@@ -11,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager2 viewPager2;
     private MyViewPagerAdapter myViewPagerAdapter;
+
+    private ImageView imgProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,5 +50,18 @@ public class MainActivity extends AppCompatActivity {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
+
+        imgProfile = findViewById(R.id.profile_image);
+        imgProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
+                startActivity(intent);
+
+
+            }
+        });
+
+
     }
 }
