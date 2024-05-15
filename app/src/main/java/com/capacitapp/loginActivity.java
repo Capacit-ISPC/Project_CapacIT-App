@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -28,10 +29,20 @@ public class loginActivity extends AppCompatActivity {
         tvPass = findViewById(R.id.editTextTextPassword);
         btn = findViewById(R.id.button2);
 
+        TextView registrarseTextView = findViewById(R.id.textV_registrarse_login);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login();
+               login();
+            }
+        });
+
+        registrarseTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(loginActivity.this, RegistroActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -49,5 +60,6 @@ public class loginActivity extends AppCompatActivity {
         } else {
             Toast.makeText(loginActivity.this, "Email o Password erroneos", Toast.LENGTH_LONG).show();
         }
+
     }
 }

@@ -39,7 +39,6 @@ public class InicioActivity extends AppCompatActivity {
             }
         });
 
-
         registrarseTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
