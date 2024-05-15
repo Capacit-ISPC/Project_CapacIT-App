@@ -8,10 +8,13 @@ Nuestro proyecto consiste en desarrollar una aplicación móvil que tiene como o
 
 Una de sus principales ventajas que incluye este complemento es brindarle el beneficio de la portabilidad y brindarle una mejor experiencia aprovechando mejor los recursos de hardware del smartphone que disponga el usuario al ser un desarrollo nativo para dichos dispositivos.
 
+---
+
 ## Herramientas de desarrollo utilizadas 🛠️
 
 - **Lenguaje de programación utilizado:** JAVA.
 - **IDE:** Android Studio.
+  
 ---
 
 ## Requisitos para utilizar la aplicación
