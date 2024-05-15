@@ -4,7 +4,7 @@
 
 Practica Profesionalizante - Proyecto Final - ISPC 2024
 
-Nuestro proyecto consiste en desarrollar una aplicación móvil que tiene como objetivo ser un coplemento del proyecto CapacIT-Web.
+Nuestro proyecto consiste en desarrollar una aplicación móvil que tiene como objetivo ser un complemento del proyecto CapacIT-Web.
 
 Una de sus principales ventajas que incluye este complemento es brindarle el beneficio de la portabilidad y brindarle una mejor experiencia aprovechando mejor los recursos de hardware del smartphone que disponga el usuario al ser un desarrollo nativo para dichos dispositivos.
 
