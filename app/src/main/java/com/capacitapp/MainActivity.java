@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.capacitapp.adapters.MyViewPagerAdapter;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private MyViewPagerAdapter myViewPagerAdapter;
 
     private ImageView imgProfile;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
