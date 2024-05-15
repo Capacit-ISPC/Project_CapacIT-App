@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +18,7 @@ public class loginActivity extends AppCompatActivity {
 
     EditText tvEmail, tvPass;
     Button btn;
+    private TextView registrarselog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class loginActivity extends AppCompatActivity {
         tvEmail = findViewById(R.id.editTextTextEmailAddress);
         tvPass = findViewById(R.id.editTextTextPassword);
         btn = findViewById(R.id.button2);
+        registrarselog = findViewById(R.id.textV_registrarse_login);
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +38,15 @@ public class loginActivity extends AppCompatActivity {
                 login();
             }
         });
+
+        registrarselog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(loginActivity.this, RegistroActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
