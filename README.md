@@ -12,7 +12,6 @@ Una de sus principales ventajas que incluye este complemento es brindarle el ben
 
 - **Lenguaje de programación utilizado:** JAVA.
 - **IDE:** Android Studio.
-
 ---
 
 ## Requisitos para utilizar la aplicación
