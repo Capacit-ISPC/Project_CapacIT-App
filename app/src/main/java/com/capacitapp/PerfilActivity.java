@@ -17,6 +17,8 @@ public class PerfilActivity extends AppCompatActivity {
     private ImageView imgBackArrow;
     private TextView textConfiguracion;
 
+    private TextView textEliminarCuenta;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +29,22 @@ public class PerfilActivity extends AppCompatActivity {
 
         textConfiguracion=findViewById(R.id.textConfig);
 
+        textEliminarCuenta=findViewById(R.id.textCloseCount);
+
         imgBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PerfilActivity.this, MainActivity.class);
+                startActivity(intent);
+
+
+            }
+        });
+
+        textEliminarCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PerfilActivity.this, EliminarCuentaActivity.class);
                 startActivity(intent);
 
 
