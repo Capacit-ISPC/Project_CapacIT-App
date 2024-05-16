@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,10 @@ import androidx.core.view.WindowInsetsCompat;
 public class PerfilActivity extends AppCompatActivity {
 
     private ImageView imgBackArrow;
+    private TextView textConfiguracion;
+    private TextView textEliminarCuenta;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +27,34 @@ public class PerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
 
         imgBackArrow = findViewById(R.id.btn_back);
+        textConfiguracion=findViewById(R.id.textConfig);
+
+        textEliminarCuenta=findViewById(R.id.textCloseCount);
+
         imgBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PerfilActivity.this, MainActivity.class);
                 startActivity(intent);
 
+
+            }
+        });
+
+        textEliminarCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PerfilActivity.this, EliminarCuentaActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        textConfiguracion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PerfilActivity.this, ConfiguracionActivity.class);
+                startActivity(intent);
 
             }
         });
