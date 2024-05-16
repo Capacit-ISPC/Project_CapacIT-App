@@ -1,11 +1,15 @@
 # 📱 CapacIT Android App
 
-<<<<<<< HEAD
-Practica Profesionalizante - Proyecto Final - ISPC 2024
+
+![portada](https://github.com/Capacit-ISPC/Project_CapacIT-App/blob/develop/documentacion/portada_capacit_app.png)
+
+## Practica Profesionalizante - Proyecto Final - ISPC 2024
 
 Nuestro proyecto consiste en desarrollar una aplicación móvil que tiene como objetivo ser un coplemento del proyecto CapacIT-Web.
 
 Una de sus principales ventajas que incluye este complemento es brindarle el beneficio de la portabilidad y brindarle una mejor experiencia aprovechando mejor los recursos de hardware del smartphone que disponga el usuario al ser un desarrollo nativo para dichos dispositivos.
+
+---
 
 ## Herramientas de desarrollo utilizadas 🛠️
 =======
@@ -16,12 +20,10 @@ JAVA  -  Android Studio
 
 ## 📖 Wiki 
 En nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) puede consultar:
->>>>>>> ccb77ed4a501e39d23238092c7829230ba5d2cbe
 
 - **Lenguaje de programación utilizado:** JAVA.
 - **IDE:** Android Studio.
 
-<<<<<<< HEAD
 ---
 
 ## Requisitos para utilizar la aplicación
@@ -45,20 +47,8 @@ Link a nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) 
 - [Meeting realizadas](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Reuniones-Equipo)
 
 - [Archivo Zip primera version]()
-=======
-  - [Diseño en Figma App ToDoOk ](https://www.figma.com/file/yzoff40O4O2ZKgYflUPnZe/CapacIT-Dise%C3%B1o?type=design&node-id=0-1&mode=design&t=g4FAlhO14i6vCfrD-0)
-   
- - [Testing](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Testing)
 
- - [Meeting realizadas](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Reuniones-Equipo)
- 
- - [Miembros de equipo](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Miembros-de-Equipo)
- 
- 
- - [Archivo Zip primera version]()
->>>>>>> ccb77ed4a501e39d23238092c7829230ba5d2cbe
-
-* Archivo Zip: Ültima versión ()
+- Archivo Zip: Ültima versión ()
 
 ---
 
