@@ -45,5 +45,11 @@
     <string name="text_contraseña_config">Contraseña</string>
     <string name="btn_editar_config">Editar</string>
 
+    <!-- ELIMINAR CUENTA-->
+    <string name="text_eliminar_cuenta">Eliminar tu cuenta de CapacIT</string>
+    <string name="text_detalle_eliminar">La eliminación de la cuenta es definitiva. Si eliminas tu cuenta de Capacit, tu perfil, tu foto, cursos y avances, se eliminarán de manera definitiva.</string>
+    <string name="btn_eliminar_cuenta">Eliminar Cuenta</string>
+    <string name="btn_cancelar_eliminar">Cancelar</string>
+
 
 </resources>

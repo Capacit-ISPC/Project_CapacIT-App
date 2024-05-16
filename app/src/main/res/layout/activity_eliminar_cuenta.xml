@@ -17,45 +17,67 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_eliminar_cuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="93dp"
-        android:text="TextView"
+        android:text="@string/text_eliminar_cuenta"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customToolbar" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="190dp"
-        android:layout_height="139dp"
+        android:id="@+id/text_detalle_eliminar"
+        android:layout_width="208dp"
+        android:layout_height="196dp"
         android:layout_marginTop="40dp"
-        android:text="TextView"
+        android:text="@string/text_detalle_eliminar"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/text_eliminar_cuenta" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_eliminar_cuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="Button"
+        android:layout_marginTop="40dp"
+        android:text="@string/btn_eliminar_cuenta"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/text_detalle_eliminar" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_cancelar_eliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:text="Button"
+        android:text="@string/btn_cancelar_eliminar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_eliminar_cuenta" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="314dp"
+        tools:layout_editor_absoluteY="286dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton_eliminar"
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="100dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toEndOf="@+id/text_detalle_eliminar"
+        app:layout_constraintTop_toBottomOf="@+id/text_eliminar_cuenta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

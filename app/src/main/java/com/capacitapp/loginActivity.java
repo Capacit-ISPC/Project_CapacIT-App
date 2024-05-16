@@ -54,7 +54,7 @@ public class loginActivity extends AppCompatActivity {
 
         if (useremail.equals("") || password.equals("")) {
             Toast.makeText(loginActivity.this, "Email o contraseña no ingresado", Toast.LENGTH_LONG).show();
-        } else if (useremail.equals("admin") && password.equals("1234")) {
+        } else if (useremail.equals("admin@email.com") && password.equals("1234")) {
             Intent i = new Intent(loginActivity.this, MainActivity.class);
             startActivity(i);
         } else {
