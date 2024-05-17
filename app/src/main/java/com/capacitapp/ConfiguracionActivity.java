@@ -30,7 +30,6 @@ public class ConfiguracionActivity extends AppCompatActivity {
                 Intent intent = new Intent(ConfiguracionActivity.this, PerfilActivity.class);
                 startActivity(intent);
 
-
             }
         });
     }
