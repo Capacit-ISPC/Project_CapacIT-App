@@ -10,8 +10,10 @@ public class BaseDeDatos extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "usuarios.db";
     private static final String TABLE_NAME = "usuarios";
     private static final String COL_1 = "ID";
-    private static final String COL_2 = "EMAIL";
-    private static final String COL_3 = "PASSWORD";
+    private static final String COL_2 = "NOMBRE";
+    private static final String COL_3 = "APELLIDO";
+    private static final String COL_4 = "EMAIL";
+    private static final String COL_5 = "PASSWORD";
 
     public BaseDeDatos(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -19,7 +21,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, EMAIL TEXT, PASSWORD TEXT)");
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, apellido TEXT, EMAIL TEXT UNIQUE, PASSWORD TEXT)");
     }
 
     @Override
@@ -28,19 +30,29 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertarUsuario(String email, String password) {
+    public void insertarUsuario(String nombre, String apellido, String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2, email);
-        contentValues.put(COL_3, password);
-        long result = db.insert(TABLE_NAME, null, contentValues);
-        return result != -1;
+
+        ContentValues values = new ContentValues();
+        values.put("nombre", nombre);
+        values.put("apellido", apellido);
+        values.put("email", email);
+        values.put("password", password);
+
+        db.insert("usuarios", null, values);
+        db.close();
     }
 
     public boolean verificarUsuario(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE EMAIL=? AND PASSWORD=?", new String[]{email, password});
-        return cursor.getCount() > 0;
+
+        Cursor cursor = db.rawQuery("SELECT * FROM usuarios WHERE email = ? AND password = ?", new String[]{email, password});
+
+        if (cursor.getCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

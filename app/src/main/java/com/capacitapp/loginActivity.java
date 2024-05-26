@@ -43,10 +43,27 @@ public class loginActivity extends AppCompatActivity {
 
         TextView registrarseTextView = findViewById(R.id.textV_registrarse_login);
 
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               login();
+
+                String email = emailEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+
+                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+                    Toast.makeText(loginActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (mibd.verificarUsuario(email, password)) {
+                    Toast.makeText(loginActivity.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(loginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(loginActivity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -69,25 +86,7 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-    public void login(){
 
-        String email = emailEditText.getText().toString();
-        String password = passwordEditText.getText().toString();
-
-        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-            Toast.makeText(loginActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (mibd.verificarUsuario(email, password)) {
-            Intent i = new Intent(loginActivity.this, MainActivity.class);
-            startActivity(i);
-            finish();
-        } else {
-            Toast.makeText(loginActivity.this, "Email o Password incorrectos", Toast.LENGTH_LONG).show();
-        }
-
-    }
     /*public void login() {
         String useremail = tvEmail.getText().toString();
         String password = tvPass.getText().toString();
