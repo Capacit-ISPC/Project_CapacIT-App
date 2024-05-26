@@ -2,6 +2,7 @@ package com.capacitapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,9 +18,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class loginActivity extends AppCompatActivity {
 
+    BaseDeDatos mibd;
+    EditText emailEditText, passwordEditText;
     private ImageView imgBackArrow;
 
-    EditText tvEmail, tvPass;
+    //EditText tvEmail, tvPass;
     Button btn;
 
     @Override
@@ -28,10 +31,14 @@ public class loginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
+        mibd = new BaseDeDatos(this);
+        emailEditText = findViewById(R.id.editTextTextEmailAddress);
+        passwordEditText = findViewById(R.id.editTextTextPassword);
+
         imgBackArrow = findViewById(R.id.btn_back);
 
-        tvEmail = findViewById(R.id.editTextTextEmailAddress);
-        tvPass = findViewById(R.id.editTextTextPassword);
+        //tvEmail = findViewById(R.id.editTextTextEmailAddress);
+        //tvPass = findViewById(R.id.editTextTextPassword);
         btn = findViewById(R.id.button2);
 
         TextView registrarseTextView = findViewById(R.id.textV_registrarse_login);
@@ -62,7 +69,26 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-    public void login() {
+    public void login(){
+
+        String email = emailEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+            Toast.makeText(loginActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (mibd.verificarUsuario(email, password)) {
+            Intent i = new Intent(loginActivity.this, MainActivity.class);
+            startActivity(i);
+            finish();
+        } else {
+            Toast.makeText(loginActivity.this, "Email o Password incorrectos", Toast.LENGTH_LONG).show();
+        }
+
+    }
+    /*public void login() {
         String useremail = tvEmail.getText().toString();
         String password = tvPass.getText().toString();
 
@@ -75,5 +101,5 @@ public class loginActivity extends AppCompatActivity {
             Toast.makeText(loginActivity.this, "Email o Password erroneos", Toast.LENGTH_LONG).show();
         }
 
-    }
+    }*/
 }
