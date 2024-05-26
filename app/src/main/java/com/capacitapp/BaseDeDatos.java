@@ -34,10 +34,10 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put("nombre", nombre);
-        values.put("apellido", apellido);
-        values.put("email", email);
-        values.put("password", password);
+        values.put(COL_2, nombre);
+        values.put(COL_3, apellido);
+        values.put(COL_4, email);
+        values.put(COL_5, password);
 
         db.insert("usuarios", null, values);
         db.close();
