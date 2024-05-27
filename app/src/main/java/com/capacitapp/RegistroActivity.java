@@ -1,28 +1,23 @@
 package com.capacitapp;
 
+import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class RegistroActivity extends AppCompatActivity {
 
-    BaseDeDatos mibd;
-    EditText nombreEditText, apellidoEditText ,emailEditText, passwordEditText;
-    Button registerButton;
-    ImageView imgBackArrow;
-
+    private ImageView imgBackArrow;
+    private TextInputEditText nombreEditText, apellidoEditText, emailEditText, passwordEditText;
+    private Button registrarseButton;
+    private com.capacitapp.DBHelper.DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,42 +25,57 @@ public class RegistroActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registro);
 
-        mibd = new BaseDeDatos(this);
-
-        emailEditText = findViewById(R.id.editTextTextEmailAddress);
-        passwordEditText = findViewById(R.id.editTextTextPassword);
-        registerButton = findViewById(R.id.button_registrarse);
-
         imgBackArrow = findViewById(R.id.btn_back);
-
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                String nombre = nombreEditText.getText().toString();
-                String apellido = apellidoEditText.getText().toString();
-                String email = emailEditText.getText().toString();
-                String password = passwordEditText.getText().toString();
-
-                if (TextUtils.isEmpty(nombre) || TextUtils.isEmpty(apellido) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-                    Toast.makeText(RegistroActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                mibd.insertarUsuario(nombre, apellido, email, password);
-
-                Toast.makeText(RegistroActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(RegistroActivity.this, loginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        nombreEditText = findViewById(R.id.textInputNombre);
+        apellidoEditText = findViewById(R.id.textInputApellido);
+        emailEditText = findViewById(R.id.textInputCorreo);
+        passwordEditText = findViewById(R.id.textInputPassword);
+        registrarseButton = findViewById(R.id.button_registrarse);
+        dbHelper = new com.capacitapp.DBHelper.DBHelper(this);
 
         imgBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RegistroActivity.this, InicioActivity.class));
-                finish();
+                Intent intent = new Intent(RegistroActivity.this, InicioActivity.class);
+                startActivity(intent);
             }
         });
+
+        registrarseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registrarUsuario();
+            }
+        });
+    }
+
+    private void registrarUsuario() {
+        String nombre = nombreEditText.getText().toString();
+        String apellido = apellidoEditText.getText().toString();
+        String email = emailEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+
+        if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+        } else {
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("name", nombre);
+            values.put("lastname", apellido);
+            values.put("email", email);
+            values.put("password", password);
+            values.put("is_active", 1);
+            values.put("is_staff", 0);
+
+            long newRowId = db.insert("Usuario", null, values);
+            if (newRowId != -1) {
+                Toast.makeText(this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(RegistroActivity.this, loginActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(this, "Error al registrar usuario", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
