@@ -24,13 +24,21 @@ public class AccountManagerHelper {
     }
 
     public void createAccount(String useremail, String password) {
-
         Account[] accounts = accountManager.getAccountsByType("account_type");
         if (accounts.length == 0) {
             Account account = new Account(useremail, "account_type");
-            accountManager.addAccountExplicitly(account, password, null);
+            try {
+                boolean accountCreated = accountManager.addAccountExplicitly(account, password, null);
+                if (!accountCreated) {
+                    throw new SecurityException("Failed to create account");
+                }
+            } catch (SecurityException e) {
+                e.printStackTrace();
+                // Manejar el error, por ejemplo, mostrar un mensaje al usuario
+            }
         }
     }
+
 
     public void getAuthToken(final Context context, final AccountManagerCallback<Bundle> callback) {
         Account[] accounts = accountManager.getAccountsByType("account_type");
