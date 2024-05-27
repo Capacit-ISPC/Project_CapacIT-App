@@ -1,6 +1,8 @@
 package com.capacitapp;
 
+
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -12,13 +14,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+
+
+import com.capacitapp.AccountManagerHelper.AccountManagerHelper;
 
 
 public class loginActivity extends AppCompatActivity {
-    private ImageView imgBackArrow;
     private EditText tvEmail, tvPass;
-    private Button btn;
     private com.capacitapp.DBHelper.DBHelper dbHelper;
+    private AccountManagerHelper accountManagerHelper;
+    private static final int PERMISSION_REQUEST_CODE = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +37,22 @@ public class loginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-        imgBackArrow = findViewById(R.id.btn_back);
+        requestPermissionsIfNeeded();
+
+        ImageView imgBackArrow = findViewById(R.id.btn_back);
         tvEmail = findViewById(R.id.editTextTextEmailAddress);
         tvPass = findViewById(R.id.editTextTextPassword);
-        btn = findViewById(R.id.button2);
+        Button btn = findViewById(R.id.button2);
         dbHelper = new com.capacitapp.DBHelper.DBHelper(this);
+
+        accountManagerHelper = new AccountManagerHelper(this);
 
         TextView registrarseTextView = findViewById(R.id.textV_registrarse_login);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 login();
             }
         });
@@ -58,6 +74,18 @@ public class loginActivity extends AppCompatActivity {
         });
     }
 
+    private void requestPermissionsIfNeeded() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{
+                    Manifest.permission.GET_ACCOUNTS,
+                    //Manifest.permission.MANAGE_ACCOUNTS,
+                    //Manifest.permission.AUTHENTICATE_ACCOUNTS,
+                    //Manifest.permission.USE_CREDENTIALS
+            }, PERMISSION_REQUEST_CODE);
+        }
+    }
+
+
     private void login() {
         String useremail = tvEmail.getText().toString();
         String password = tvPass.getText().toString();
@@ -77,8 +105,7 @@ public class loginActivity extends AppCompatActivity {
             );
 
             if (cursor != null && cursor.moveToFirst()) {
-                Intent i = new Intent(loginActivity.this, MainActivity.class);
-                startActivity(i);
+                accountManagerHelper.login(this, useremail, password);
             } else {
                 // Credenciales incorrectas
                 Toast.makeText(loginActivity.this, "Email o contraseña incorrectos", Toast.LENGTH_LONG).show();
