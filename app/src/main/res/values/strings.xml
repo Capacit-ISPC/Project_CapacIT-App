@@ -51,5 +51,11 @@
     <string name="btn_eliminar_cuenta">Eliminar Cuenta</string>
     <string name="btn_cancelar_eliminar">Cancelar</string>
 
+    <!-- Items List -->
+    <string name="name_recyclerview">ExpandableRecyclerView</string>
+    <string name="check_this_item">Check this item?</string>
+    <string name="drop_down_arrow">Drop down arrow</string>
+
+
 
 </resources>
