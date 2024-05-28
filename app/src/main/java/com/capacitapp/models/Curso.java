@@ -1,64 +1,104 @@
 package com.capacitapp.models;
 
 public class Curso {
+
     int id;
-    String img;
-    String titulo;
-    String descripcion;
-    double precio;
+    String  name;
+    String description;
+    String language;
+    String technology;
+    String level;
+    double  price;
+    String link;
+    String teacher_name;
 
     public Curso(){
 
     }
 
-    public Curso(int id,String img,String titulo, String descripcion, double precio) {
+    public Curso(int id, String name, String description, String language, String technology, String level, double price, String link, String teacher_name) {
         this.id = id;
-        this.img = img;
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.precio = precio;
+        this.name = name;
+        this.description = description;
+        this.language = language;
+        this.technology = technology;
+        this.level = level;
+        this.price = price;
+        this.link = link;
+        this.teacher_name = teacher_name;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getImg() {
-        return img;
-    }
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setImg(String img){
-        this.img=img;
+    public String getName() {
+        return name;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
+    public String getLanguage() {
+        return language;
+    }
 
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getTechnology() {
+        return technology;
+    }
+
+    public void setTechnology(String technology) {
+        this.technology = technology;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getTeacherName() {
+        return teacher_name;
+    }
+
+    public void setTeacherName(String teacher_name) {
+        this.teacher_name = teacher_name;
+    }
 }
 
 
