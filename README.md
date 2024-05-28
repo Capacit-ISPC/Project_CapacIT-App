@@ -45,7 +45,7 @@ Link a nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) 
 
 - [Meeting realizadas](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Reuniones-Equipo)
 
-- Archivo Zip: Ültima versión ()
+- [Archivo Zip: Ültima versión](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Archivo-Zip-%E2%80%90-%C3%9Altima-Version-App)
 
 ---
 
