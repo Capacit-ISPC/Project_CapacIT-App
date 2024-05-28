@@ -1,89 +1,83 @@
 package com.capacitapp.adapters;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.capacitapp.models.Curso;
-import com.capacitapp.OnItemClickListener;
 import com.capacitapp.R;
+import com.capacitapp.models.ItemData;
 
 import java.util.List;
 
-public class MisCursosAdapter extends RecyclerView.Adapter<MisCursosAdapter.MisCursoViewHolder> {
+public class MisCursosAdapter extends RecyclerView.Adapter<MisCursosAdapter.ViewHolder> {
 
-    private List<Curso> misCursosList;
-    private Context context;
-    private OnItemClickListener listener;
+    private List<ItemData> dataList;
 
-    public MisCursosAdapter(List<Curso> misCursosList, OnItemClickListener listener) {
-        this.misCursosList = misCursosList;
-        this.listener = listener;
+    public MisCursosAdapter(List<ItemData> dataList) {
+        this.dataList = dataList;
     }
 
     @NonNull
     @Override
-    public MisCursoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_mi_curso, parent, false);
-        this.context = parent.getContext();
-        return new MisCursoViewHolder(view);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_view, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MisCursoViewHolder holder, int position) {
-        Curso curso = misCursosList.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        ItemData item = dataList.get(position);
+        holder.textView.setText(item.getText());
 
-        // Manejar el caso en que getImg() devuelve un nombre de recurso de imagen como String
-        int resourceId = context.getResources().getIdentifier(curso.getImg(), "drawable", context.getPackageName());
-        if (resourceId != 0) {
-            holder.imgViewMyCourse.setImageResource(resourceId);
-        } else {
-            holder.imgViewMyCourse.setImageResource(R.drawable.imgmicurso_1);
+        // Clear the LinearLayout to avoid duplicating CheckBoxes on scroll
+        holder.expandableLayout.removeAllViews();
+
+        // Add CheckBoxes dynamically
+        for (String checkBoxText : item.getCheckBoxItems()) {
+            CheckBox checkBox = new CheckBox(holder.itemView.getContext());
+            checkBox.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
+            checkBox.setText(checkBoxText);
+            holder.expandableLayout.addView(checkBox);
         }
-        holder.bind(curso, listener);
+
+        if (item.isExpanded()) {
+            holder.expandableLayout.setVisibility(View.VISIBLE);
+            holder.imageView.setRotation(180); // Rotates arrow icon
+        } else {
+            holder.expandableLayout.setVisibility(View.GONE);
+            holder.imageView.setRotation(0); // Resets arrow icon rotation
+        }
+
+        holder.itemView.setOnClickListener(v -> {
+            item.setExpanded(!item.isExpanded());
+            notifyItemChanged(position);
+        });
     }
 
     @Override
     public int getItemCount() {
-        return misCursosList.size();
+        return dataList.size();
     }
 
-    public static class MisCursoViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView textView;
+        ImageView imageView;
+        LinearLayout expandableLayout;
 
-        ImageView imgViewMyCourse;
-        TextView tvTitle;
-        //ImageView imageView3;
-        RelativeLayout containerMain;
-
-        public MisCursoViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgViewMyCourse = itemView.findViewById(R.id.imgViewMyCourse);
-            tvTitle = itemView.findViewById(R.id.tvTitle);
-            containerMain = itemView.findViewById(R.id.containerMain);
-        }
-
-        public void bind(final Curso curso, final OnItemClickListener listener) {
-            imgViewMyCourse.setImageResource(R.drawable.imgmicurso_1); // Imagen por defecto
-
-            tvTitle.setText(curso.getTitulo());
-
-            containerMain.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (listener != null) {
-                        listener.onItemClick(curso);
-                    }
-                }
-            });
-
-
+            textView = itemView.findViewById(R.id.textView);
+            imageView = itemView.findViewById(R.id.imageView);
+            expandableLayout = itemView.findViewById(R.id.expandableLayout);
         }
     }
 }
