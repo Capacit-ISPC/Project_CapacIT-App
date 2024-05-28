@@ -1,6 +1,5 @@
 # 📱 CapacIT Android App
 
-
 ![portada](https://github.com/Capacit-ISPC/Project_CapacIT-App/blob/develop/documentacion/portada_capacit_app.png)
 
 ## Practica Profesionalizante - Proyecto Final - ISPC 2024
@@ -45,8 +44,6 @@ Link a nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) 
 - [Testing](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Testing)
 
 - [Meeting realizadas](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/Reuniones-Equipo)
-
-- [Archivo Zip primera version]()
 
 - Archivo Zip: Ültima versión ()
 
