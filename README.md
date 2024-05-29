@@ -1,4 +1,4 @@
-# 📱 CapacIT Android App    
+# 📱 CapacIT Android App
 
 ![portada](https://github.com/Capacit-ISPC/Project_CapacIT-App/blob/develop/documentacion/portada_capacit_app.png)
 
