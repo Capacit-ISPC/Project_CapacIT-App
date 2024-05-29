@@ -21,20 +21,19 @@ Una de sus principales ventajas es brindar el beneficio de la portabilidad y ofr
 
 - **Requisitos de usuario**: Conocimientos minimos de uso básico de un smartphone.
 - **Requisitos de hardware**: Dispositivo Smartphone con acceso a internet y Sistema Operativo **Android 7** o superior.
-- 
+  
 ---
 ## Documento IEEE830
 
-- Link a documento : [IEE830 CapacITApp 2024](https://docs.google.com/document/d/1e0zM1yF02QUeH7akZ6qVxyfHWLgBOY3wE-Z4JhKcTiQ/edit)
+- Link a documento: https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki/IEEE830
+  
 
 ---
-
-
 ## 📖 Wiki 
 
 En nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) puede consultar:
 
-Link a nuestra [Wiki](https://github.com/Capacit-ISPC/Project_CapacIT-App/wiki) puede consultar:
+
 
 - [Diseño en Figma App](https://www.figma.com/file/yzoff40O4O2ZKgYflUPnZe/CapacIT-Dise%C3%B1o?type=design&node-id=0-1&mode=design&t=g4FAlhO14i6vCfrD-0)
   
