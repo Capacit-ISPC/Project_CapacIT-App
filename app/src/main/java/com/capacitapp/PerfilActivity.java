@@ -93,7 +93,7 @@ public class PerfilActivity extends AppCompatActivity {
 
     //    ArrayAdapter<String> adaptor =
     //            new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, item);
-    //    textNombre..setAdapter(adaptor);
+    //    textNombre.setAdapter(adaptor);
 
     //}
 }
