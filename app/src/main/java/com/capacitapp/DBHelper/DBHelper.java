@@ -108,4 +108,9 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM Curso", null);
     }
+
+    public Cursor getUsuario() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM Usuario", null);
+    }
 }
