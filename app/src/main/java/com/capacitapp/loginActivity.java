@@ -1,5 +1,6 @@
 package com.capacitapp;
 
+import android.util.Patterns;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -60,12 +61,26 @@ public class loginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        String useremail = tvEmail.getText().toString();
-        String password = tvPass.getText().toString();
+        String useremail = tvEmail.getText().toString().trim();
+        String password = tvPass.getText().toString().trim();
 
-        if (useremail.isEmpty() || password.isEmpty()) {
-            Toast.makeText(loginActivity.this, "Email o contraseña no ingresado", Toast.LENGTH_LONG).show();
-        } else {
+        if (useremail.isEmpty()) {
+            tvEmail.setError("El correo es requerido");
+            tvEmail.requestFocus();
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(useremail).matches()) {
+            tvEmail.setError("Por favor, ingrese un correo válido");
+            tvEmail.requestFocus();
+            return;
+        }
+
+        if (password.isEmpty()) {
+            tvPass.setError("La contraseña es requerida");
+            tvPass.requestFocus();
+            return;
+        }
             SQLiteDatabase db = dbHelper.getReadableDatabase();
             Cursor cursor = db.query(
                     "Usuario",
@@ -92,4 +107,3 @@ public class loginActivity extends AppCompatActivity {
     }
 
 
-}
