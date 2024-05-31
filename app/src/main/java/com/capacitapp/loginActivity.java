@@ -15,6 +15,8 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.capacitapp.utils.UserPreferences;
+
 
 public class loginActivity extends AppCompatActivity {
     private ImageView imgBackArrow;
@@ -93,8 +95,11 @@ public class loginActivity extends AppCompatActivity {
             );
 
             if (cursor != null && cursor.moveToFirst()) {
+                int userId = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+                UserPreferences.saveUserIdToPreferences(this, userId); // Guardar el ID del usuario para luego usarlo en cualquier parte usando sharedpreferences
                 Intent i = new Intent(loginActivity.this, MainActivity.class);
                 startActivity(i);
+                finish(); // Finalizar la actividad de login para que el usuario no pueda regresar con el botón de retroceso
             } else {
                 // Credenciales incorrectas
                 Toast.makeText(loginActivity.this, "Email o contraseña incorrectos", Toast.LENGTH_LONG).show();

@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.capacitapp.DBHelper.DBHelper;
-import com.capacitapp.models.Curso;
 import com.capacitapp.R;
 import com.capacitapp.adapters.CursosAdapter;
+import com.capacitapp.models.Curso;
 
 import java.util.ArrayList;
 import java.util.List;
