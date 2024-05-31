@@ -1,5 +1,6 @@
 package com.capacitapp;
 
+import android.util.Patterns;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -50,15 +51,48 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     private void registrarUsuario() {
-        String nombre = nombreEditText.getText().toString();
-        String apellido = apellidoEditText.getText().toString();
-        String email = emailEditText.getText().toString();
-        String password = passwordEditText.getText().toString();
+        String nombre = nombreEditText.getText().toString().trim();
+        String apellido = apellidoEditText.getText().toString().trim();
+        String email = emailEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
 
-        if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
-        } else {
-            SQLiteDatabase db = dbHelper.getWritableDatabase();
+        if (nombre.isEmpty()) {
+            nombreEditText.setError("Nombre es requerido");
+            nombreEditText.requestFocus();
+            return;
+        }
+
+        if (apellido.isEmpty()) {
+            apellidoEditText.setError("Apellido es requerido");
+            apellidoEditText.requestFocus();
+            return;
+        }
+
+        if (email.isEmpty()) {
+            emailEditText.setError("Correo es requerido");
+            emailEditText.requestFocus();
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailEditText.setError("Por favor ingrese un correo válido");
+            emailEditText.requestFocus();
+            return;
+        }
+
+        if (password.isEmpty()) {
+            passwordEditText.setError("Contraseña es requerida");
+            passwordEditText.requestFocus();
+            return;
+        }
+
+        if (password.length() < 6) {
+            passwordEditText.setError("La contraseña debe tener al menos 6 caracteres");
+            passwordEditText.requestFocus();
+            return;
+        }
+
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put("name", nombre);
             values.put("lastname", apellido);
@@ -78,4 +112,4 @@ public class RegistroActivity extends AppCompatActivity {
             }
         }
     }
-}
+
