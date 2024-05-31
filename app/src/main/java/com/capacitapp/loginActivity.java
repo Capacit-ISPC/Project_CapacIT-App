@@ -86,7 +86,7 @@ public class loginActivity extends AppCompatActivity {
             SQLiteDatabase db = dbHelper.getReadableDatabase();
             Cursor cursor = db.query(
                     "Usuario",
-                    new String[]{"email", "password"},
+                    new String[]{"id","email", "password"},
                     "email = ? AND password = ?",
                     new String[]{useremail, password},
                     null,
