@@ -1,9 +1,16 @@
 package com.capacitapp.DBHelper;
 
+
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.capacitapp.models.Curso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "capacitapp.db";
@@ -81,36 +88,63 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(INSERT_DEFAULT_USER);
         //Insertar cursos disponibles por defecto
         String INSERT_DEFAULT_COURSES = "INSERT INTO Curso (name, description, language, technology, level, price, link, teacher_name) VALUES "
-                + "('Curso de Java Básico', 'Aprende los fundamentos de Java.', 'Español', 'Java', 'Básico', 49.99, 'http://example.com/java-basico', 'Juan Pérez'),"
-                + "('Curso de Python Avanzado', 'Domina técnicas avanzadas de Python.', 'Español', 'Python', 'Avanzado', 79.99, 'http://example.com/python-avanzado', 'Ana García'),"
-                + "('Curso de Desarrollo Web', 'Desarrolla sitios web profesionales.', 'Español', 'HTML, CSS, JavaScript', 'Intermedio', 59.99, 'http://example.com/desarrollo-web', 'Carlos Martínez'),"
+                + "('Curso de Java Básico', 'Aprende los fundamentos de Java.', 'Español', 'Java', 'Básico', 49.99, 'https://youtu.be/autGQjeP6jE?si=afXRn8nbB8wkPjEJ', 'Juan Pérez'),"
+                + "('Curso de Python Avanzado', 'Domina técnicas avanzadas de Python.', 'Español', 'Python', 'Avanzado', 79.99, 'https://youtu.be/autGQjeP6jE?si=afXRn8nbB8wkPjEJ', 'Ana García'),"
+                + "('Curso de Desarrollo Web', 'Desarrolla sitios web profesionales.', 'Español', 'HTML, CSS, JavaScript', 'Intermedio', 59.99, 'https://youtu.be/autGQjeP6jE?si=afXRn8nbB8wkPjEJ', 'Carlos Martínez'),"
                 + "('Curso de Machine Learning', 'Machine Learning con Python.', 'Español', 'Python', 'Intermedio', 89.99, 'http://example.com/machine-learning', 'Lucía Fernández'),"
                 + "('Curso de Bases de Datos SQL', 'Aprende SQL y gestiona BBDD.', 'Español', 'SQL', 'Básico', 39.99, 'http://example.com/bases-de-datos-sql', 'David Rodríguez');";
         db.execSQL(INSERT_DEFAULT_COURSES);
 
         //Insertar datos por defecto tabla cursos usuario
-        String INSERT_DEFAULT_USUARIO_CURSO="INSERT INTO UsuarioCurso (usuario_id, curso_id) VALUES (1, 1)";
+        String INSERT_DEFAULT_USUARIO_CURSO = "INSERT INTO UsuarioCurso (usuario_id, curso_id) VALUES (1, 1), (1,2),(1,3) ";
+
         db.execSQL(INSERT_DEFAULT_USUARIO_CURSO);
-
     }
 
+        @Override
+        public void onUpgrade (SQLiteDatabase db,int oldVersion, int newVersion){
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_COURSE);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER_COURSE); //agregado tabla usuariocurso nueva version
+            db.execSQL("DROP TABLE IF EXISTS Clase");//agregada tabla clase nueva version
+            onCreate(db);
+        }
+
+        public Cursor getCursos () {
+            SQLiteDatabase db = this.getReadableDatabase();
+            return db.rawQuery("SELECT * FROM Curso", null);
+        }
 
 
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_COURSE);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER_COURSE); //agregado tabla nueva version
-        onCreate(db);
-    }
+        // Métodos actualizados para obtener la lista de cursos de un usuario
+        public List<Curso> getCursosByUserId ( int userId){
+            List<Curso> cursos = new ArrayList<>();
+            SQLiteDatabase db = this.getReadableDatabase();
+            String query = "SELECT c.id, c.name, c.description, c.language, c.technology, c.level, c.price, c.link, c.teacher_name " +
+                    "FROM UsuarioCurso uc " +
+                    "INNER JOIN Curso c ON uc.curso_id = c.id " +
+                    "WHERE uc.usuario_id = ?";
+            Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(userId)});
 
-    public Cursor getCursos() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM Curso", null);
-    }
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    Curso curso = new Curso(
+                            cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                            cursor.getString(cursor.getColumnIndexOrThrow("name")),
+                            cursor.getString(cursor.getColumnIndexOrThrow("description")),
+                            cursor.getString(cursor.getColumnIndexOrThrow("language")),
+                            cursor.getString(cursor.getColumnIndexOrThrow("technology")),
+                            cursor.getString(cursor.getColumnIndexOrThrow("level")),
+                            cursor.getDouble(cursor.getColumnIndexOrThrow("price")),
+                            cursor.getString(cursor.getColumnIndexOrThrow("link")),
+                            cursor.getString(cursor.getColumnIndexOrThrow("teacher_name"))
+                    );
+                    cursos.add(curso);
+                } while (cursor.moveToNext());
+                cursor.close();
+            }
+            return cursos;
+        }
 
-    public Cursor getUsuario() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM Usuario", null);
-    }
+
 }
