@@ -56,6 +56,8 @@
     <string name="check_this_item">Check this item?</string>
     <string name="drop_down_arrow">Drop down arrow</string>
 
+    <!-- VERPERFIL-->
+    <string name="btn_ireditarperfil">Modificar Datos de Perfil</string>
 
 
 </resources>

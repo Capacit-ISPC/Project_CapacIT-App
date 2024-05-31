@@ -25,10 +25,7 @@ public class PerfilActivity extends AppCompatActivity {
     private TextView textConfiguracion;
     private TextView textEliminarCuenta;
 
-//    private TextView textNombre;
 
-//    DBHelper conn;
-//    List<String> item =null;
 
 
     @Override
@@ -42,10 +39,7 @@ public class PerfilActivity extends AppCompatActivity {
 
         textEliminarCuenta=findViewById(R.id.textCloseCount);
 
-    //    textNombre = findViewById(R.id.textViewName);
 
-    //   showUser();
-    //    conn = new DBHelper(getApplicationContext());
 
 
         imgBackArrow.setOnClickListener(new View.OnClickListener() {
@@ -70,30 +64,12 @@ public class PerfilActivity extends AppCompatActivity {
         textConfiguracion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PerfilActivity.this, ConfiguracionActivity.class);
+                Intent intent = new Intent(PerfilActivity.this, VerPerfilActivity.class);
                 startActivity(intent);
 
             }
         });
     }
 
-    //private void showUser() {
-    //conn = new DBHelper(this);
-    //   Cursor c = conn.getUsuario();
-    //    item = new ArrayList<String>();
-    //    String Name = "";
 
-    //    if(c.moveToFirst()){
-    //        do {
-    //            Name = c.getString(0);
-    //            item.add(Name);
-
-    //        }while (c.moveToNext());
-    //    }
-
-    //    ArrayAdapter<String> adaptor =
-    //            new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, item);
-    //    textNombre.setAdapter(adaptor);
-
-    //}
 }
