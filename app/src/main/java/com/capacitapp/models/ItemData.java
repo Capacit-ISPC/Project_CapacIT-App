@@ -4,13 +4,15 @@ import java.util.List;
 
 public class ItemData {
     private String text;
-    private boolean expanded;
     private List<String> checkBoxItems;
+    private boolean expanded;
+    private Curso curso;
 
-    public ItemData(String text, List<String> checkBoxItems) {
+    public ItemData(String text, List<String> checkBoxItems, Curso curso) {
         this.text = text;
-        this.expanded = false;
         this.checkBoxItems = checkBoxItems;
+        this.curso = curso;
+        this.expanded = false;
     }
 
     public String getText() {
@@ -21,6 +23,14 @@ public class ItemData {
         this.text = text;
     }
 
+    public List<String> getCheckBoxItems() {
+        return checkBoxItems;
+    }
+
+    public void setCheckBoxItems(List<String> checkBoxItems) {
+        this.checkBoxItems = checkBoxItems;
+    }
+
     public boolean isExpanded() {
         return expanded;
     }
@@ -29,11 +39,11 @@ public class ItemData {
         this.expanded = expanded;
     }
 
-    public List<String> getCheckBoxItems() {
-        return checkBoxItems;
+    public Curso getCurso() {
+        return curso;
     }
 
-    public void setCheckBoxItems(List<String> checkBoxItems) {
-        this.checkBoxItems = checkBoxItems;
+    public void setCurso(Curso curso) {
+        this.curso = curso;
     }
 }

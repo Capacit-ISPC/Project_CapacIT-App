@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewCursoName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
@@ -25,24 +25,28 @@
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/drop_down_arrow"
         android:src="@drawable/ic_arrow_drop_down"
-        app:layout_constraintBottom_toBottomOf="@id/textView"
+        app:layout_constraintBottom_toBottomOf="@id/textViewCursoName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textView" />
+        app:layout_constraintTop_toTopOf="@id/textViewCursoName" />
 
     <LinearLayout
-        android:id="@+id/expandableLayout"
+        android:id="@+id/checkBoxCursoLink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView">
+        app:layout_constraintTop_toBottomOf="@id/textViewCursoName"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-53dp">
 
         <CheckBox
             android:id="@+id/checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="5dp"
             android:text="@string/check_this_item" />
+
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -88,11 +88,11 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(INSERT_DEFAULT_USER);
         //Insertar cursos disponibles por defecto
         String INSERT_DEFAULT_COURSES = "INSERT INTO Curso (name, description, language, technology, level, price, link, teacher_name) VALUES "
-                + "('Curso de Java Básico', 'Aprende los fundamentos de Java.', 'Español', 'Java', 'Básico', 49.99, 'https://youtu.be/autGQjeP6jE?si=afXRn8nbB8wkPjEJ', 'Juan Pérez'),"
-                + "('Curso de Python Avanzado', 'Domina técnicas avanzadas de Python.', 'Español', 'Python', 'Avanzado', 79.99, 'https://youtu.be/autGQjeP6jE?si=afXRn8nbB8wkPjEJ', 'Ana García'),"
-                + "('Curso de Desarrollo Web', 'Desarrolla sitios web profesionales.', 'Español', 'HTML, CSS, JavaScript', 'Intermedio', 59.99, 'https://youtu.be/autGQjeP6jE?si=afXRn8nbB8wkPjEJ', 'Carlos Martínez'),"
-                + "('Curso de Machine Learning', 'Machine Learning con Python.', 'Español', 'Python', 'Intermedio', 89.99, 'http://example.com/machine-learning', 'Lucía Fernández'),"
-                + "('Curso de Bases de Datos SQL', 'Aprende SQL y gestiona BBDD.', 'Español', 'SQL', 'Básico', 39.99, 'http://example.com/bases-de-datos-sql', 'David Rodríguez');";
+                + "('Curso de Java Básico', 'Aprende los fundamentos de Java.', 'Español', 'Java', 'Básico', 49.99, 'NbhlGfQLaKI', 'Juan Pérez'),"
+                + "('Curso de Python Avanzado', 'Domina técnicas avanzadas de Python.', 'Español', 'Python', 'Avanzado', 79.99, 'eS0Q511qNgg', 'Ana García'),"
+                + "('Curso de Desarrollo Web', 'Desarrolla sitios web profesionales.', 'Español', 'HTML, CSS, JavaScript', 'Intermedio', 59.99, 'eS0Q511qNgg', 'Carlos Martínez'),"
+                + "('Curso de Machine Learning', 'Machine Learning con Python.', 'Español', 'Python', 'Intermedio', 89.99, 'NbhlGfQLaKI', 'Lucía Fernández'),"
+                + "('Curso de Bases de Datos SQL', 'Aprende SQL y gestiona BBDD.', 'Español', 'SQL', 'Básico', 39.99, 'eS0Q511qNgg', 'David Rodríguez');";
         db.execSQL(INSERT_DEFAULT_COURSES);
 
         //Insertar datos por defecto tabla cursos usuario
