@@ -1,5 +1,6 @@
 package com.capacitapp;
 
+import android.content.SharedPreferences;
 import android.util.Patterns;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -101,7 +102,7 @@ public class RegistroActivity extends AppCompatActivity {
             values.put("is_active", 1);
             values.put("is_staff", 0);
 
-            long newRowId = db.insert("Usuario", null, values);
+            /*long newRowId = db.insert("Usuario", null, values);
             if (newRowId != -1) {
                 Toast.makeText(this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(RegistroActivity.this, loginActivity.class);
@@ -109,7 +110,23 @@ public class RegistroActivity extends AppCompatActivity {
                 finish();
             } else {
                 Toast.makeText(this, "Error al registrar usuario", Toast.LENGTH_SHORT).show();
+            }*/
+            long newRowId = db.insert("Usuario", null, values);
+            if (newRowId != -1) {
+                SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt("userId", (int) newRowId);
+                editor.apply();
+
+                Toast.makeText(this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(RegistroActivity.this, loginActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(this, "Error al registrar usuario", Toast.LENGTH_SHORT).show();
             }
+
         }
     }
+
 
