@@ -145,6 +145,22 @@ public class DBHelper extends SQLiteOpenHelper {
             }
             return cursos;
         }
+    public void deleteUser(int userId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.beginTransaction();
+        try {
+            // Eliminar registros de la tabla intermedia UsuarioCurso
+            db.delete(TABLE_USER_COURSE, USER_COURSE_USER_ID + " = ?", new String[]{String.valueOf(userId)});
+
+            // Eliminar el usuario de la tabla Usuario
+            db.delete(TABLE_USER, USER_ID + " = ?", new String[]{String.valueOf(userId)});
+
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
+        }
+        db.close();
+    }
 
 
 }
