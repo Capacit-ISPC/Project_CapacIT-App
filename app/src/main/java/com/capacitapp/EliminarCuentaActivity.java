@@ -35,7 +35,7 @@ public class EliminarCuentaActivity extends AppCompatActivity {
 
         dbHelper = new DBHelper(this);
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        userId = prefs.getInt("id", -1);
+        userId = prefs.getInt("userId", -1);
         //userId = getIntent().getIntExtra("userId", 0);
 
         Log.d("EliminarCuentaActivity", "ID del usuario: " + userId);
