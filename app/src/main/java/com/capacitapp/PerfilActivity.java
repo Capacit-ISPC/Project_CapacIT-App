@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,8 +26,7 @@ public class PerfilActivity extends AppCompatActivity {
     private TextView textConfiguracion;
     private TextView textEliminarCuenta;
 
-
-
+    private Button cerrarSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +39,7 @@ public class PerfilActivity extends AppCompatActivity {
 
         textEliminarCuenta=findViewById(R.id.textCloseCount);
 
-
-
+        cerrarSesion = findViewById(R.id.cerrarSesión);
 
         imgBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +66,14 @@ public class PerfilActivity extends AppCompatActivity {
                 Intent intent = new Intent(PerfilActivity.this, VerPerfilActivity.class);
                 startActivity(intent);
 
+            }
+        });
+        cerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PerfilActivity.this, loginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
