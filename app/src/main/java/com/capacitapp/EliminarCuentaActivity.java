@@ -14,10 +14,6 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.capacitapp.DBHelper.DBHelper;
-import com.capacitapp.models.Usuario;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class EliminarCuentaActivity extends AppCompatActivity {
 
