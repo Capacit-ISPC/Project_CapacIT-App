@@ -39,6 +39,9 @@ public class ConfiguracionActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_configuracion);
 
+        context = this;
+        dbHelper = new DBHelper(context);
+
         imgBackArrow = findViewById(R.id.btn_back);
 
         // Obtener referencias a los TextInputEditText
@@ -52,13 +55,24 @@ public class ConfiguracionActivity extends AppCompatActivity {
         imgBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ConfiguracionActivity.this, VerPerfilActivity.class);
+                Intent intent = new Intent(ConfiguracionActivity.this, PerfilActivity.class);
                 startActivity(intent);
 
             }
         });
 
         loadUserData();
+
+        editarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (editarButton.getText().toString().equals(getString(R.string.btn_editar_config))) {
+                    enableEditing();
+                } else {
+                    saveUserData();
+                }
+            }
+        });
 
     }
 
@@ -95,7 +109,10 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
             // Obtener el ID del usuario actual
             int id = UserPreferences.getLoggedUserId(context);
-
+            if (id == -1) {
+                Toast.makeText(context, "Error al obtener el ID del usuario", Toast.LENGTH_SHORT).show();
+                return;
+            }
             // Obtener los datos actuales del usuario
             Usuario userPerfil = dbHelper.getUserById(id);
 
@@ -165,6 +182,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(context, "No se encontraron datos del usuario", Toast.LENGTH_SHORT).show();
             }
+            setEditable(false);
         } catch (Exception e) {
             Toast.makeText(context, "Error al guardar los datos", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
