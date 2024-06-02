@@ -59,5 +59,8 @@
     <!-- VERPERFIL-->
     <string name="btn_ireditarperfil">Modificar Datos de Perfil</string>
 
+    <!-- Editar Perfil -->
+    <string name="btn_guardar_config">Guardar</string>
+
 
 </resources>
