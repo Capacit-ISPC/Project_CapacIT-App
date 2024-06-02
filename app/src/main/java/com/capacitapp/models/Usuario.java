@@ -11,7 +11,8 @@ public class Usuario {
     Boolean is_active;
     Boolean is_staff;
 
-    public Usuario(String email, String name, String lastname, String password, Boolean is_active, Boolean is_staff) {
+    public Usuario(int id, String email, String name, String lastname, String password, Boolean is_active, Boolean is_staff) {
+        this.id= id;
         this.email = email;
         this.name = name;
         this.lastname = lastname;
