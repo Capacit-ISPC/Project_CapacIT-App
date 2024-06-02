@@ -17,7 +17,7 @@ Una de sus principales ventajas es brindar el beneficio de la portabilidad y ofr
 
 ---
 
-## Requisitos para utilizar la aplicación 
+## Requisitos para utilizar la aplicación  
 
 - **Requisitos de usuario**: Conocimientos minimos de uso básico de un smartphone.
 - **Requisitos de hardware**: Dispositivo Smartphone con acceso a internet y Sistema Operativo **Android 7** o superior.
