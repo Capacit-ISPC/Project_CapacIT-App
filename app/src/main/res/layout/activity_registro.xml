@@ -16,6 +16,19 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_tbPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Registro"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/customToolbar"
+        app:layout_constraintEnd_toEndOf="@+id/customToolbar"
+        app:layout_constraintStart_toStartOf="@+id/customToolbar"
+        app:layout_constraintTop_toTopOf="@+id/customToolbar" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout7"
         android:layout_width="350dp"
@@ -39,12 +52,14 @@
 
     <Button
         android:id="@+id/button_registrarse"
-        android:layout_width="163dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="76dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
         android:text="@string/button"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView

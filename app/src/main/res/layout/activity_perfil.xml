@@ -31,8 +31,9 @@
             android:layout_margin="20dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:text="Leo Messi"
-            android:textSize="20dp"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/customToolbar" />
 
@@ -162,12 +163,13 @@
 
     <Button
         android:id="@+id/cerrarSesión"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Cerrar sesión"
+        android:textSize="18sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
