@@ -32,7 +32,7 @@ public class CursoAdapter extends RecyclerView.Adapter<CursoAdapter.CursoViewHol
     public void onBindViewHolder(@NonNull CursoViewHolder holder, int position) {
         Curso curso = cursos.get(position);
         holder.nameTextView.setText(curso.getName());
-        // Set other fields as needed
+
     }
 
     @Override
@@ -48,12 +48,12 @@ public class CursoAdapter extends RecyclerView.Adapter<CursoAdapter.CursoViewHol
 
     static class CursoViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView;
-        // Other fields
+
 
         public CursoViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.curso_name);
-            // Initialize other fields
+
         }
     }
 }

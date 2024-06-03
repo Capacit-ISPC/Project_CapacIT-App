@@ -12,6 +12,5 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <!-- Other fields as needed -->
 
 </LinearLayout>
