@@ -20,17 +20,17 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="end|center_vertical"
             android:layout_marginEnd="16dp"
+            android:src="@drawable/imageuser"
             android:clickable="true"
-            android:contentDescription="Profile Image"
             android:focusable="true"
-            android:onClick="goToProfile"
-            android:src="@drawable/img_user_perfil" />
+            android:contentDescription="Profile Image" />
+
 
     </androidx.appcompat.widget.Toolbar>
 </com.google.android.material.appbar.AppBarLayout>
