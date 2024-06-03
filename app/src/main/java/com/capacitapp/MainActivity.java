@@ -3,6 +3,8 @@ package com.capacitapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
@@ -11,13 +13,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.capacitapp.DBHelper.DBHelper;
+import com.capacitapp.adapters.CursoAdapter;
+import com.capacitapp.models.Curso;
 import com.google.android.material.tabs.TabLayout;
 import com.capacitapp.adapters.MyViewPagerAdapter;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.widget.SearchView;
+import android.widget.Toast;
+
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,16 +37,30 @@ public class MainActivity extends AppCompatActivity {
     private MyViewPagerAdapter myViewPagerAdapter;
     private ImageView imgProfile;
 
+    private SearchView searchView;
+    private DBHelper dbHelper;
+
+    private RecyclerView recyclerView;
+    private CursoAdapter cursoAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        dbHelper = new DBHelper(this);
+
         tabLayout = findViewById(R.id.tab_layout);
         viewPager2 = findViewById(R.id.view_pager);
+        searchView = findViewById(R.id.search);
         myViewPagerAdapter = new MyViewPagerAdapter(this);
 
         viewPager2.setAdapter(myViewPagerAdapter);
+
+        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        cursoAdapter = new CursoAdapter(new ArrayList<>());
+        recyclerView.setAdapter(cursoAdapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -51,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+
+
 
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -68,7 +95,45 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                tabLayout.selectTab(tabLayout.getTabAt(position));
+            }
+        });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchCourses(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchCourses(newText);
+                return false;
+            }
+        });
     }
 
+    private void searchCourses(String query) {
+        List<Curso> cursos = dbHelper.searchCursos(query);
+        if (cursos.isEmpty()) {
+            Toast.makeText(this, "No se encontraron resultados", Toast.LENGTH_SHORT).show();
+        } else {
 
+            // Aquí podrías actualizar tu interfaz con los cursos encontrados
+            // Por ejemplo, podrías mostrar los cursos en un RecyclerView
+            showSearchResults(cursos);
+        }
+    }
+
+    private void showSearchResults(List<Curso> cursos) {
+        // Implementa esta función para mostrar los resultados de la búsqueda
+        // Podrías usar un RecyclerView para mostrar los cursos en la misma actividad
+        cursoAdapter.updateCursos(cursos);
+    }
 }

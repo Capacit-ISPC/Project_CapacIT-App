@@ -1,7 +1,5 @@
 package com.capacitapp.DBHelper;
 
-
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -203,6 +201,29 @@ public class DBHelper extends SQLiteOpenHelper {
         }
 
     }
+    public List<Curso> searchCursos(String query) {
+        List<Curso> cursos = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String searchQuery = "SELECT * FROM " + TABLE_COURSE + " WHERE " + COURSE_NAME + " LIKE ?";
+        Cursor cursor = db.rawQuery(searchQuery, new String[]{"%" + query + "%"});
 
-
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                Curso curso = new Curso(
+                        cursor.getInt(cursor.getColumnIndexOrThrow(COURSE_ID)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(COURSE_NAME)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(COURSE_DESCRIPTION)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(COURSE_LANGUAGE)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(COURSE_TECHNOLOGY)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(COURSE_LEVEL)),
+                        cursor.getDouble(cursor.getColumnIndexOrThrow(COURSE_PRICE)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(COURSE_LINK)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(COURSE_TEACHER_NAME))
+                );
+                cursos.add(curso);
+            } while (cursor.moveToNext());
+            cursor.close();
+        }
+        return cursos;
+    }
 }
