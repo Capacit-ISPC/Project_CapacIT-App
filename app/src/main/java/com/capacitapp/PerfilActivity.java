@@ -3,6 +3,7 @@ package com.capacitapp;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -34,15 +35,17 @@ public class PerfilActivity extends AppCompatActivity {
     private DBHelper dbHelper;
     private Context context;
     private int currentUserId;
-
-
     private Button cerrarSesion;
+
+    private ImageView profileImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_perfil);
+
+        profileImageView = findViewById(R.id.imageViewProfile);
 
         context = this;
         dbHelper = new DBHelper(context);
@@ -96,8 +99,16 @@ public class PerfilActivity extends AppCompatActivity {
         });
 
         loadUserData();
+        loadProfileImage();
 
         }
+
+    private void loadProfileImage() {
+        String imageUri = UserPreferences.getUserProfileImage(this);
+        if (imageUri != null) {
+            profileImageView.setImageURI(Uri.parse(imageUri));
+        }
+    }
 
     private void loadUserData() {        currentUserId = UserPreferences.getLoggedUserId(context); // Obtén el ID del usuario logueado
         Usuario userPerfil = dbHelper.getUserById(currentUserId);
