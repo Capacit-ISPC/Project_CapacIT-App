@@ -13,9 +13,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 import com.capacitapp.DBHelper.DBHelper;
 import com.capacitapp.models.Usuario;
@@ -35,6 +33,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
     private DBHelper dbHelper;
     private Context context;
     private int currentUserId;
+    private Uri imageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +67,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
         });
 
         loadUserData();
+        loadProfileImage();
 
         editarButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,13 +101,18 @@ public class ConfiguracionActivity extends AppCompatActivity {
     private void enableEditing() {
         setEditable(true);
         editarButton.setText(R.string.btn_guardar_config);
+        editinImageProfile();
 
+    }
+
+    private void editinImageProfile(){
         fotoImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGallery();
             }
         });
+
     }
 
     private void setEditable(boolean enabled) {
@@ -115,6 +120,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
         apellidoEditText.setEnabled(enabled);
         emailEditText.setEnabled(enabled);
         passEditText.setEnabled(enabled);
+        fotoImageView.setClickable(enabled);
     }
 
     private void saveUserData() {
@@ -188,9 +194,15 @@ public class ConfiguracionActivity extends AppCompatActivity {
                 // Actualizar el usuario en la base de datos
                 dbHelper.updateUser(usuarioActualizado);
 
+                // Guardar la imagen de perfil si ha sido seleccionada
+                if (imageUri != null) {
+                    saveProfileImage(imageUri.toString());
+                }
+
                 // Desactivar edición y cambiar el texto al botón
                 setEditable(false);
                 editarButton.setText(R.string.btn_editar_config);
+                fotoImageView.setClickable(false);
                 Toast.makeText(context, "Datos guardados exitosamente", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(context, "No se encontraron datos del usuario", Toast.LENGTH_SHORT).show();
@@ -214,7 +226,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE && data != null) {
-            Uri imageUri = data.getData();
+            imageUri = data.getData();
             // Otorgar permisos de lectura de URI persistente
             getContentResolver().takePersistableUriPermission(imageUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
             fotoImageView.setImageURI(imageUri);
