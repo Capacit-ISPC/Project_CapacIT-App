@@ -39,10 +39,10 @@ public class CursosAdapter extends RecyclerView.Adapter<CursosAdapter.CursoViewH
         return cursosList.size();
     }
 
-    public void updateData(List<Curso> newCursos) {
+    /*public void updateData(List<Curso> newCursos) {
         cursosList = newCursos;
         notifyDataSetChanged();
-    }
+    }*/
     public static class CursoViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvNombreCurso;

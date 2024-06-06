@@ -25,11 +25,11 @@ public class CursosFragment extends Fragment {
 
 
     private RecyclerView recyclerViewCursos;
-    private RecyclerView recyclerViewSearchResults;
+    //private RecyclerView recyclerViewSearchResults;
     private List<Curso> cursosList;
     private List<Curso> searchResultsList;
     private CursosAdapter cursosAdapter;
-    private CursosAdapter searchResultsAdapter;
+    //private CursosAdapter searchResultsAdapter;
     private DBHelper dbHelper;
     private SearchView searchView;
 
@@ -42,20 +42,20 @@ public class CursosFragment extends Fragment {
         cursosList = new ArrayList<>();
         searchResultsList = new ArrayList<>();
         recyclerViewCursos = view.findViewById(R.id.recyclerViewCursos);
-        recyclerViewSearchResults = view.findViewById(R.id.recyclerViewSearchResults);
+       // recyclerViewSearchResults = view.findViewById(R.id.recyclerViewSearchResults);
         searchView = view.findViewById(R.id.search);
 
         recyclerViewCursos.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerViewSearchResults.setLayoutManager(new LinearLayoutManager(getContext()));
+        //recyclerViewSearchResults.setLayoutManager(new LinearLayoutManager(getContext()));
 
         dbHelper = new DBHelper(getContext());
         cargarCursosDesdeDB();
 
         cursosAdapter = new CursosAdapter(cursosList);
-        searchResultsAdapter = new CursosAdapter(searchResultsList);
+        //searchResultsAdapter = new CursosAdapter(searchResultsList);
 
         recyclerViewCursos.setAdapter(cursosAdapter);
-        recyclerViewSearchResults.setAdapter(searchResultsAdapter);
+        //recyclerViewSearchResults.setAdapter(searchResultsAdapter);
 
         return view;
     }
@@ -83,7 +83,7 @@ public class CursosFragment extends Fragment {
             Toast.makeText(getContext(), "No se encontraron cursos en la base de datos", Toast.LENGTH_SHORT).show();
         }
     }
-    private void setupSearchView() {
+    /*private void setupSearchView() {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -112,5 +112,5 @@ public class CursosFragment extends Fragment {
             searchResultsAdapter.updateData (searchResultsList);
             recyclerViewSearchResults.setVisibility(View.VISIBLE);
         }
-    }
+    }*/
 }
