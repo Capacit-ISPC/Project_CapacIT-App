@@ -1,5 +1,6 @@
 package com.capacitapp.fragments;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -32,6 +33,7 @@ public class CursosFragment extends Fragment {
     private DBHelper dbHelper;
     private SearchView searchView;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class CursosFragment extends Fragment {
         cursosList = new ArrayList<>();
         searchResultsList = new ArrayList<>();
         recyclerViewCursos = view.findViewById(R.id.recyclerViewCursos);
-        recyclerViewSearchResults = view.findViewById(R.id.recycler_view);
+        recyclerViewSearchResults = view.findViewById(R.id.recyclerViewSearchResults);
         searchView = view.findViewById(R.id.search);
 
         recyclerViewCursos.setLayoutManager(new LinearLayoutManager(getContext()));
