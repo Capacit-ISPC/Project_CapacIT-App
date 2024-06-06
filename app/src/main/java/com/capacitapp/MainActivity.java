@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -164,13 +165,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
     private void searchCourses(String query) {
         List<Curso> cursos = dbHelper.searchCursos(query);
         if (cursos.isEmpty()) {
             Toast.makeText(this, "No se encontraron resultados", Toast.LENGTH_SHORT).show();
+            Log.d("MainActivity", "No se encontraron resultados para: " + query);
         } else {
+            Log.d("MainActivity", "Resultados encontrados para: " + query);
+            for (Curso curso : cursos) {
+                Log.d("MainActivity", "Curso: " + curso.getName());
+            }
             showSearchResults(cursos);
         }
     }

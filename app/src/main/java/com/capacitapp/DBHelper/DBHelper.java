@@ -224,6 +224,7 @@ public class DBHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
             cursor.close();
         }
+        Log.d("DBHelper", "Cursos encontrados: " + cursos.size());
         return cursos;
     }
 
