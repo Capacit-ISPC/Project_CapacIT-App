@@ -34,7 +34,7 @@ public class AccountManagerHelper {
                 }
             } catch (SecurityException e) {
                 e.printStackTrace();
-                // Manejar el error, por ejemplo, mostrar un mensaje al usuario
+
             }
         }
     }
