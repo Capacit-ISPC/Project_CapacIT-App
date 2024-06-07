@@ -78,7 +78,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_capacit"
+        app:srcCompat="@drawable/iconoweb"
         tools:ignore="ExtraText" />
+
+    <TextView
+        android:id="@+id/tv_visitaWeb"
+
+        android:layout_width="224dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="84dp"
+        android:gravity="center"
+        android:text="@string/text_visitaWeb"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewemailContacto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
