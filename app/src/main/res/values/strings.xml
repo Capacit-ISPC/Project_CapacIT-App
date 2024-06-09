@@ -63,5 +63,9 @@
     <!-- Editar Perfil -->
     <string name="btn_guardar_config">Guardar</string>
 
+    <!-- Buscar cursos-->
+    <string name="search_results">Resultados de búsqueda para: %1$s</string>
+
+
 
 </resources>
