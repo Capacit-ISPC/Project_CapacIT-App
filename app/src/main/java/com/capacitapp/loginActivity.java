@@ -83,6 +83,17 @@ public class loginActivity extends AppCompatActivity {
             tvPass.requestFocus();
             return;
         }
+
+        if (password.length() < 6) {
+            tvPass.setError("La contraseña debe tener al menos 6 caracteres");
+            tvPass.requestFocus();
+            return;
+        }
+        if (!password.matches(".*[A-Za-z].*") || !password.matches(".*[0-9].*")) {
+            tvPass.setError("La contraseña debe contener al menos una letra y un número");
+            tvPass.requestFocus();
+            return;
+        }
             SQLiteDatabase db = dbHelper.getReadableDatabase();
             Cursor cursor = db.query(
                     "Usuario",
