@@ -46,6 +46,9 @@ public class EliminarCuentaActivity extends AppCompatActivity {
         Log.d("EliminarCuentaActivity", "ID del usuario: " + userId);
         btnEliminarCuenta.setEnabled(false); // Desactivar botón eliminar al inicio
 
+        radioButtonEliminar.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            btnEliminarCuenta.setEnabled(isChecked); // Activar o desactivar botón según estado del RadioButton
+        });
 
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
