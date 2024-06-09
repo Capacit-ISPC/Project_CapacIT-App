@@ -54,7 +54,6 @@
         android:id="@+id/button_registrarse"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="224dp"
         android:text="@string/button"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -125,15 +124,5 @@
             tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
-        android:id="@+id/img_logoRegistro"
-        android:layout_width="129dp"
-        android:layout_height="107dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
