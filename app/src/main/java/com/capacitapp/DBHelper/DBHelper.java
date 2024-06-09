@@ -86,19 +86,23 @@ public class DBHelper extends SQLiteOpenHelper {
 
         // Insertar un usuario por defecto
         String INSERT_DEFAULT_USER = "INSERT INTO Usuario (email, name, lastname, password, is_active, is_staff) " +
-                "VALUES ('admin@gmail.com', 'User', 'Admin', '12345', 1, 0)";
+                "VALUES ('admin@gmail.com', 'User', 'Admin', '123456', 1, 1),"
+                + "('leomesi@gmail.com', 'Leonel', 'Messi', 'abc456', 1, 1),"
+                + "('luchaymar@gmail.c       om', 'Luciana', 'Aymar', 'abc456', 1, 1),"
+                + "('manuginobili@gmail.com', 'Manu', 'Ginobili', 'abc456', 1, 1)";
         db.execSQL(INSERT_DEFAULT_USER);
         //Insertar cursos disponibles por defecto
         String INSERT_DEFAULT_COURSES = "INSERT INTO Curso (name, description, language, technology, level, price, link, teacher_name) VALUES "
-                + "('Curso de Java Básico', 'Aprende los fundamentos de Java.', 'Español', 'Java', 'Básico', 49.99, 'NbhlGfQLaKI', 'Juan Pérez'),"
-                + "('Curso de Python Avanzado', 'Domina técnicas avanzadas de Python.', 'Español', 'Python', 'Avanzado', 79.99, 'eS0Q511qNgg', 'Sara García'),"
-                + "('Curso de Desarrollo Web', 'Desarrolla sitios web profesionales.', 'Español', 'HTML, CSS, JavaScript', 'Intermedio', 59.99, '<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/eS0Q511qNgg?si=CbU59CXGwZQLSwiB\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>', 'Carlos Martínez'),"
-                + "('Curso de Machine Learning', 'Machine Learning con Python.', 'Español', 'Python', 'Intermedio', 89.99, 'http://example.com/machine-learning', 'Lucía Fernández'),"
-                + "('Curso de Bases de Datos SQL', 'Aprende SQL y gestiona BBDD.', 'Español', 'SQL', 'Básico', 39.99, 'http://example.com/bases-de-datos-sql', 'David Rodríguez');";
+                + "('Java Básico', 'Aprende los fundamentos de Java.', 'Español', 'Java', 'Básico', 49.99, 'NbhlGfQLaKI', 'Juan Pérez'),"
+                + "('Python Avanzado', 'Domina técnicas avanzadas de Python.', 'Español', 'Python', 'Avanzado', 79.99, 'eS0Q511qNgg', 'Sara García'),"
+                + "('Desarrollo Web Java', 'Desarrolla sitios web profesionales.', 'Español', 'HTML, CSS, JavaScript', 'Intermedio', 59.99, 'NbhlGfQLaKI', 'Carlos Martínez'),"
+                + "('Machine Learning con Python', 'Machine Learning con Python.', 'Español', 'Python', 'Intermedio', 89.99, 'eS0Q511qNgg', 'Lucía Fernández'),"
+                + "('Analisis de Datos con Python', 'Conviertete en analista de datos con Python.', 'Español', 'Python', 'Intermedio', 89.99, 'eS0Q511qNgg', 'Lucía Fernández'),"
+                + "('Bases de Datos SQL', 'Aprende SQL y gestiona BBDD.', 'Español', 'SQL', 'Básico', 39.99, 'NbhlGfQLaKI', 'David Rodríguez')";
         db.execSQL(INSERT_DEFAULT_COURSES);
 
         //Insertar datos por defecto tabla cursos usuario
-        String INSERT_DEFAULT_USUARIO_CURSO="INSERT INTO UsuarioCurso (usuario_id, curso_id) VALUES (1, 1), (1,2),(1,3) ";
+        String INSERT_DEFAULT_USUARIO_CURSO="INSERT INTO UsuarioCurso (usuario_id, curso_id) VALUES (1, 1), (1,2),(1,3),(2,1),(2,2),(2,4),(3,2),(3,3),(3,4),(3,5),(4,2),(4,4),(4,5) ";
 
         db.execSQL(INSERT_DEFAULT_USUARIO_CURSO);
 
