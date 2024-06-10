@@ -16,6 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CapacitApp"
         tools:targetApi="31">
+        <activity android:name=".SearchResultsActivity"
+            android:exported="false"/>
         <activity android:name=".VideoActivity"
             android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="true"/>

@@ -20,11 +20,13 @@ import com.capacitapp.models.Usuario;
 import com.capacitapp.utils.UserPreferences;
 import com.google.android.material.textfield.TextInputEditText;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ConfiguracionActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE = 100;
     private ImageView imgBackArrow;
-    private ImageView fotoImageView;
+    private CircleImageView fotoImageView;
     private TextInputEditText nombreEditText;
     private TextInputEditText apellidoEditText;
     private TextInputEditText emailEditText;
@@ -102,6 +104,8 @@ public class ConfiguracionActivity extends AppCompatActivity {
         setEditable(true);
         editarButton.setText(R.string.btn_guardar_config);
         editinImageProfile();
+        fotoImageView.setBorderWidth(10); // Activar borde cuando se edita
+
 
     }
 
@@ -121,6 +125,9 @@ public class ConfiguracionActivity extends AppCompatActivity {
         emailEditText.setEnabled(enabled);
         passEditText.setEnabled(enabled);
         fotoImageView.setClickable(enabled);
+        if (!enabled) {
+            fotoImageView.setBorderWidth(0); // Desactivar borde cuando no se edita
+        }
     }
 
     private void saveUserData() {

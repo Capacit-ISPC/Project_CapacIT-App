@@ -1,10 +1,12 @@
 package com.capacitapp.fragments;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -21,11 +23,17 @@ import java.util.List;
 
 public class CursosFragment extends Fragment {
 
+
     private RecyclerView recyclerViewCursos;
+
     private List<Curso> cursosList;
+
     private CursosAdapter cursosAdapter;
+
     private DBHelper dbHelper;
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,11 +41,16 @@ public class CursosFragment extends Fragment {
 
         cursosList = new ArrayList<>();
         recyclerViewCursos = view.findViewById(R.id.recyclerViewCursos);
+
         recyclerViewCursos.setLayoutManager(new LinearLayoutManager(getContext()));
+
         dbHelper = new DBHelper(getContext());
         cargarCursosDesdeDB();
+
         cursosAdapter = new CursosAdapter(cursosList);
+
         recyclerViewCursos.setAdapter(cursosAdapter);
+
 
         return view;
     }
@@ -65,4 +78,5 @@ public class CursosFragment extends Fragment {
             Toast.makeText(getContext(), "No se encontraron cursos en la base de datos", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

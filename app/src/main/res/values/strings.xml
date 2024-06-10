@@ -16,6 +16,7 @@
     <string name="text_ayuda">¿Cómo podemos ayudarte?</string>
     <string name="text_contactarnos">Podés contactarnos escribiéndonos al siguiente e-mail:</string>
     <string name="text_emailcontacto">capacitcba@gmail.com</string>
+    <string name="text_visitaWeb">¡Visita nuestra Web! CapacIT.com</string>
 
     <!-- INICIO-->
     <string name="iniciar_secion">Iniciar Sesión</string>
@@ -61,6 +62,10 @@
 
     <!-- Editar Perfil -->
     <string name="btn_guardar_config">Guardar</string>
+
+    <!-- Buscar cursos-->
+    <string name="search_results">Resultados de búsqueda para: %1$s</string>
+
 
 
 </resources>

@@ -24,7 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customToolbar"
-        app:srcCompat="@drawable/ic_capacit" />
+        app:srcCompat="@drawable/iconoweb" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"

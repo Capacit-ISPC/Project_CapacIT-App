@@ -39,6 +39,7 @@ public class CursosAdapter extends RecyclerView.Adapter<CursosAdapter.CursoViewH
         return cursosList.size();
     }
 
+
     public static class CursoViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvNombreCurso;
