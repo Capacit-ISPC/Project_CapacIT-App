@@ -14,13 +14,18 @@
         layout="@layout/backward_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/toolbar_navegacion_atras"
+        />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="234dp"
-        android:layout_height="201dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="129dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/logo_de_la_aplicacion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customToolbar"
@@ -41,7 +46,9 @@
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/campo_para_ingresar_correo"
+        />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -58,7 +65,9 @@
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/campo_para_ingresar_contrase_a"
+        />
 
 
     <Button
@@ -71,7 +80,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/boton_para_iniciar_sesion"
+        />
 
     <TextView
         android:id="@+id/textView13"
@@ -83,7 +94,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.198"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/texto_no_tienes_cuenta"
+        />
 
     <TextView
         android:id="@+id/textV_registrarse_login"
@@ -97,6 +110,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.358"
-        app:layout_constraintStart_toEndOf="@+id/textView13" />
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        android:contentDescription="@string/enlace_para_registrarse"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

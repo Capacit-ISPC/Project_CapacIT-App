@@ -86,7 +86,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         // Insertar un usuario por defecto
         String INSERT_DEFAULT_USER = "INSERT INTO Usuario (email, name, lastname, password, is_active, is_staff) " +
-                "VALUES ('admin@gmail.com', 'User', 'Admin', '123456', 1, 1),"
+                "VALUES ('admin@gmail.com', 'User', 'Admin', 'abc456', 1, 1),"
                 + "('leomesi@gmail.com', 'Leonel', 'Messi', 'abc456', 1, 1),"
                 + "('luchaymar@gmail.c       om', 'Luciana', 'Aymar', 'abc456', 1, 1),"
                 + "('manuginobili@gmail.com', 'Manu', 'Ginobili', 'abc456', 1, 1)";

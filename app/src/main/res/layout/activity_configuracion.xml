@@ -14,7 +14,9 @@
         layout="@layout/backward_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/toolbar_navegacion_atras"
+        />
 
     <TextView
         android:id="@+id/tv_tbPerfil"
@@ -27,7 +29,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/customToolbar"
         app:layout_constraintEnd_toEndOf="@+id/customToolbar"
         app:layout_constraintStart_toStartOf="@+id/customToolbar"
-        app:layout_constraintTop_toTopOf="@+id/customToolbar" />
+        app:layout_constraintTop_toTopOf="@+id/customToolbar"
+        android:contentDescription="@string/titulo_perfil"
+        />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView_foto_config"
@@ -40,6 +44,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customToolbar"
         app:civ_border_width="0dp"
+        android:contentDescription="@string/imagen_para_perfil"
+
         />
 
 
@@ -72,7 +78,9 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:hint=""
-            android:inputType="text" />
+            android:inputType="text"
+            android:contentDescription="@string/campo_para_ingresar_nombre"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -105,7 +113,9 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:hint=""
-            android:inputType="text" />
+            android:inputType="text"
+            android:contentDescription="@string/campo_para_ingresar_apellido"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -138,7 +148,9 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:hint=""
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:contentDescription="@string/campo_para_ingresar_correo"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -174,7 +186,9 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:hint=""
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:contentDescription="@string/campo_para_ingresar_contrase_a"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -187,6 +201,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPass" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPass"
+        android:contentDescription="@string/boton_editar"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
