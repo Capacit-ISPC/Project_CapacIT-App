@@ -15,5 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/iconoweb" />
+        app:srcCompat="@drawable/iconoweb"
+        android:contentDescription="@string/logo_de_la_aplicacion"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
