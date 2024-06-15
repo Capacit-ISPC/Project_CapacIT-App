@@ -14,18 +14,21 @@
         layout="@layout/backward_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/toolbar_navegacion_atras"
+        />
 
     <TextView
         android:id="@+id/text_eliminar_cuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="93dp"
+        android:layout_marginTop="92dp"
+        android:contentDescription="@string/text_titulo_eliminar_cuenta"
         android:text="@string/text_eliminar_cuenta"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customToolbar" />
 
@@ -39,7 +42,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_eliminar_cuenta" />
+        app:layout_constraintTop_toBottomOf="@+id/text_eliminar_cuenta"
+        android:contentDescription="@string/text_desc_eliminar_cuenta"
+        />
 
     <Button
         android:id="@+id/btn_eliminar_cuenta"
@@ -51,7 +56,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_detalle_eliminar" />
+        app:layout_constraintTop_toBottomOf="@+id/text_detalle_eliminar"
+        android:contentDescription="@string/boton_eliminar_cuenta"
+
+        />
 
     <Button
         android:id="@+id/btn_cancelar_eliminar"
@@ -62,7 +70,9 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_eliminar_cuenta" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_eliminar_cuenta"
+        android:contentDescription="@string/boton_cancelar_eliminar_cuenta"
+        />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -81,8 +91,10 @@
         android:layout_marginTop="100dp"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/text_detalle_eliminar"
-        app:layout_constraintTop_toBottomOf="@+id/text_eliminar_cuenta" />
+        app:layout_constraintTop_toBottomOf="@+id/text_eliminar_cuenta"
+        android:contentDescription="@string/rb_confirmar_eliminar_cuenta"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

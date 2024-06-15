@@ -23,7 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/imgcurso1" />
+            android:src="@drawable/imgcurso1"
+            android:contentDescription="@string/imagen_curso"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -38,7 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre Curso"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:contentDescription="@string/text_nombre_curso"/>
 
             <TextView
                 android:id="@+id/tvPrecioCurso"
@@ -48,7 +50,9 @@
                 android:layout_centerVertical="true"
                 android:text="99 USS"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:contentDescription="@string/text_precio_curso"
+                />
         </RelativeLayout>
 
         <LinearLayout
@@ -64,13 +68,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:text="Descripción del curso"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:contentDescription="@string/text_descripción_curso"
+                />
 
             <Button
                 android:id="@+id/button_registrarse"
                 android:layout_width="match_parent"
                 android:layout_height="51sp"
-                android:text="Comprar" />
+                android:text="Comprar"
+                android:contentDescription="@string/boton_comprar_curso"
+                />
 
         </LinearLayout>
 

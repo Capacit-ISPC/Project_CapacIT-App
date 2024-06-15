@@ -12,7 +12,9 @@
         layout="@layout/backward_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/toolbar_navegacion_atras"
+        />
     <TextView
         android:id="@+id/tv_tbPerfil"
         android:layout_width="wrap_content"
@@ -24,7 +26,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/customToolbar"
         app:layout_constraintEnd_toEndOf="@+id/customToolbar"
         app:layout_constraintStart_toStartOf="@+id/customToolbar"
-        app:layout_constraintTop_toTopOf="@+id/customToolbar" />
+        app:layout_constraintTop_toTopOf="@+id/customToolbar"
+        android:contentDescription="@string/text_titulo_contacto"
+        />
 
 
     <TextView
@@ -39,7 +43,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customToolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/customToolbar"
+        android:contentDescription="@string/text_ayudarte"
+        />
 
     <TextView
         android:id="@+id/textViewContactarnos"
@@ -51,7 +57,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAyuda" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAyuda"
+        android:contentDescription="@string/text_contactarnos_email"
+
+        />
 
     <TextView
         android:id="@+id/textViewemailContacto"
@@ -66,13 +75,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewContactarnos" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewContactarnos"
+        android:contentDescription="@string/text_email_contacto"
+        />
 
     <ImageView
         android:id="@+id/imageViewLogoContacto"
         android:layout_width="match_parent"
         android:layout_height="154dp"
-        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -80,7 +90,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewemailContacto"
         app:layout_constraintVertical_bias="0.215"
         app:srcCompat="@drawable/iconoweb"
-        tools:ignore="ExtraText" />
+        tools:ignore="ExtraText"
+        android:contentDescription="@string/logo_de_la_aplicacion"
+        />
 
     <TextView
         android:id="@+id/tv_visitaWeb"
@@ -95,6 +107,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewLogoContacto" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogoContacto"
+        android:contentDescription="@string/text_desc_visita_web"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,9 @@
             android:layout_gravity="start"
             android:text="Capacit"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:contentDescription="@string/titulo_capacit"
+            />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -29,7 +31,8 @@
             android:src="@drawable/imageuser"
             android:clickable="true"
             android:focusable="true"
-            android:contentDescription="Profile Image" />
+            android:contentDescription="@string/img_link_perfil"
+            />
 
 
     </androidx.appcompat.widget.Toolbar>

@@ -12,6 +12,7 @@
         android:background="@drawable/border_search"
         android:layout_margin="16dp"
         tools:layout_editor_absoluteX="16dp"
+        android:contentDescription="@string/desc_search"
         />
 
 </RelativeLayout>

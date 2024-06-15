@@ -14,7 +14,9 @@
         layout="@layout/backward_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/toolbar_navegacion_atras"
+        />
 
     <ImageView
         android:id="@+id/img_logoRegistro"
@@ -24,7 +26,9 @@
         app:layout_constraintTop_toBottomOf="@+id/customToolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher"
+        android:contentDescription="@string/logo_de_la_aplicacion"
+        />
 
     <TextView
         android:id="@+id/tv_tbPerfil"
@@ -37,7 +41,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/customToolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/customToolbar" />
+        app:layout_constraintTop_toTopOf="@+id/customToolbar"
+        android:contentDescription="@string/titulo_registro"
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout7"
@@ -57,7 +63,9 @@
             android:hint="@string/nombre_s"
             android:textColor="@color/black"
             android:textSize="20dp"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:contentDescription="@string/campo_para_ingresar_nombre"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -77,7 +85,9 @@
             android:layout_height="wrap_content"
             android:hint="@string/apellido_s"
             android:textSize="20dp"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:contentDescription="@string/campo_para_ingresar_apellido"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -98,7 +108,9 @@
             android:textSize="20dp"
             android:hint="@string/correo"
             android:inputType="textEmailAddress"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:contentDescription="@string/campo_para_ingresar_correo"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -120,7 +132,9 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:inputType="textPassword"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:contentDescription="@string/campo_para_ingresar_contrase_a"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -133,7 +147,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-
+        android:contentDescription="@string/boton_para_registro"
         />
 
 

@@ -13,7 +13,9 @@
         layout="@layout/backward_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/toolbar_navegacion_atras"
+        />
 
     <LinearLayout
         android:id="@+id/detallePerfil"
@@ -35,7 +37,9 @@
             android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/customToolbar" />
+            app:layout_constraintTop_toBottomOf="@id/customToolbar"
+            android:contentDescription="@string/text_nombre_usuario"
+            />
 
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -47,6 +51,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/imagen_para_perfil"
             />
 
         <TextView
@@ -57,6 +62,7 @@
             android:text="Estudiante"
             app:layout_constraintTop_toBottomOf="@id/imageView"
             android:textSize="20dp"
+            android:contentDescription="@string/text_estudiante"
             />
     </LinearLayout>
 
@@ -73,7 +79,9 @@
             android:id="@+id/imageViewConfig"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/imageviewconfig" />
+            android:src="@drawable/imageviewconfig"
+            android:contentDescription="@string/icono_configuracion"
+            />
 
         <TextView
             android:id="@+id/textConfig"
@@ -83,7 +91,9 @@
             android:layout_marginBottom="13dp"
             android:text="Configuración"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:contentDescription="@string/link_para_configuracion"
+            />
 
     </LinearLayout>
 
@@ -98,7 +108,9 @@
             android:id="@+id/imageViewPay"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/imageviewpay" />
+            android:src="@drawable/imageviewpay"
+            android:contentDescription="@string/icono_medio_de_pago"
+            />
 
         <TextView
             android:id="@+id/textPay"
@@ -108,7 +120,9 @@
             android:layout_marginBottom="13dp"
             android:text="Medio de pago"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:contentDescription="@string/text_medio_de_pago"
+            />
 
     </LinearLayout>
 
@@ -123,7 +137,9 @@
             android:id="@+id/imageViewHistory"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/imageviewrecord" />
+            android:src="@drawable/imageviewrecord"
+            android:contentDescription="@string/icono_historial"
+            />
 
         <TextView
             android:id="@+id/textHistory"
@@ -133,7 +149,9 @@
             android:layout_marginBottom="13dp"
             android:text="Historial"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:contentDescription="@string/text_historial"
+            />
 
     </LinearLayout>
 
@@ -148,7 +166,9 @@
             android:id="@+id/imageViewDelCount"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/imageviewdelcount" />
+            android:src="@drawable/imageviewdelcount"
+            android:contentDescription="@string/icono_eliminar_cuenta"
+            />
 
         <TextView
             android:id="@+id/textCloseCount"
@@ -157,7 +177,9 @@
             android:layout_marginLeft="5dp"
             android:text="Eliminar cuenta"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:contentDescription="@string/link_para_eliminar_cuenta"
+            />
 
     </LinearLayout>
 
@@ -174,6 +196,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutDelCount" />
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutDelCount"
+        android:contentDescription="@string/boton_cerrar_sesion"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
